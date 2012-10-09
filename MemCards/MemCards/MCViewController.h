@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MCViewController : UIViewController
-
+@interface MCViewController : UIViewController{
+   
+}
 @end

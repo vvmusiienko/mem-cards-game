@@ -16,6 +16,7 @@
 		56AE4C4F1615DA30000FBF5A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AE4C4D1615DA30000FBF5A /* MainStoryboard_iPhone.storyboard */; };
 		56AE4C521615DA30000FBF5A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AE4C501615DA30000FBF5A /* MainStoryboard_iPad.storyboard */; };
 		56AE4C551615DA30000FBF5A /* MCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AE4C541615DA30000FBF5A /* MCViewController.m */; };
+		CF06FF0D16205687004EE563 /* MCGameEndViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF06FF0C16205687004EE563 /* MCGameEndViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		56AE4C511615DA30000FBF5A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		56AE4C531615DA30000FBF5A /* MCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCViewController.h; sourceTree = "<group>"; };
 		56AE4C541615DA30000FBF5A /* MCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCViewController.m; sourceTree = "<group>"; };
+		CF06FF0B16205687004EE563 /* MCGameEndViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGameEndViewController.h; sourceTree = "<group>"; };
+		CF06FF0C16205687004EE563 /* MCGameEndViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCGameEndViewController.m; path = "/Users/jura/Documents/mem-cards-game/MemCards/MemCards/MCGameEndViewController.m"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 				56AE4C4A1615DA30000FBF5A /* MCAppDelegate.h */,
 				56AE4C4B1615DA30000FBF5A /* MCAppDelegate.m */,
 				56AE4C4D1615DA30000FBF5A /* MainStoryboard_iPhone.storyboard */,
+				CF06FF0B16205687004EE563 /* MCGameEndViewController.h */,
+				CF06FF0C16205687004EE563 /* MCGameEndViewController.m */,
 				56AE4C501615DA30000FBF5A /* MainStoryboard_iPad.storyboard */,
 				56AE4C531615DA30000FBF5A /* MCViewController.h */,
 				56AE4C541615DA30000FBF5A /* MCViewController.m */,
@@ -94,8 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				56AE4C431615DA30000FBF5A /* MemCards-Info.plist */,
-				56AE4C441615DA30000FBF5A /* InfoPlist.strings */,
 				56AE4C471615DA30000FBF5A /* main.m */,
+				56AE4C441615DA30000FBF5A /* InfoPlist.strings */,
 				56AE4C491615DA30000FBF5A /* MemCards-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -169,6 +174,7 @@
 				56AE4C481615DA30000FBF5A /* main.m in Sources */,
 				56AE4C4C1615DA30000FBF5A /* MCAppDelegate.m in Sources */,
 				56AE4C551615DA30000FBF5A /* MCViewController.m in Sources */,
+				CF06FF0D16205687004EE563 /* MCGameEndViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +300,7 @@
 				56AE4C5A1615DA30000FBF5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
