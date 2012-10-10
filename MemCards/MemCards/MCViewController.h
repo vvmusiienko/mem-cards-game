@@ -9,5 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface MCViewController : UIViewController
+  IBOutlet UILabel * time;
+	NSTimer * myTicker;
+  IBOutlet UILabel * score; 
+	
+	int Score;
+	
 
+-(void)viewDidLoad;
+-(void)showActivity;
+-(void)score;
+@end
 @end
