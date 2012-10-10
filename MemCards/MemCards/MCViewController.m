@@ -7,6 +7,7 @@
 //
 
 #import "MCViewController.h"
+#import "MCGameField.h"
 
 @interface MCViewController ()
 
@@ -14,10 +15,17 @@
 
 @implementation MCViewController
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+  
+    MCGameField *outMes=[MCGameField alloc];
+    [outMes  setwidthAndHeight:2 :3];
+   
+ // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
