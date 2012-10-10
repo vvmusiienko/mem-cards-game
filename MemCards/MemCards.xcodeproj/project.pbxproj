@@ -16,6 +16,7 @@
 		56AE4C4F1615DA30000FBF5A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AE4C4D1615DA30000FBF5A /* MainStoryboard_iPhone.storyboard */; };
 		56AE4C521615DA30000FBF5A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AE4C501615DA30000FBF5A /* MainStoryboard_iPad.storyboard */; };
 		56AE4C551615DA30000FBF5A /* MCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AE4C541615DA30000FBF5A /* MCViewController.m */; };
+		DCD6CCBD1625C8B200011F4F /* MCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD6CCBC1625C8B200011F4F /* MCMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		56AE4C511615DA30000FBF5A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		56AE4C531615DA30000FBF5A /* MCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCViewController.h; sourceTree = "<group>"; };
 		56AE4C541615DA30000FBF5A /* MCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCViewController.m; sourceTree = "<group>"; };
+		DCD6CCBB1625C8B200011F4F /* MCMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMainViewController.h; sourceTree = "<group>"; };
+		DCD6CCBC1625C8B200011F4F /* MCMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				56AE4C501615DA30000FBF5A /* MainStoryboard_iPad.storyboard */,
 				56AE4C531615DA30000FBF5A /* MCViewController.h */,
 				56AE4C541615DA30000FBF5A /* MCViewController.m */,
+				DCD6CCBB1625C8B200011F4F /* MCMainViewController.h */,
+				DCD6CCBC1625C8B200011F4F /* MCMainViewController.m */,
 				56AE4C421615DA30000FBF5A /* Supporting Files */,
 			);
 			path = MemCards;
@@ -169,6 +174,7 @@
 				56AE4C481615DA30000FBF5A /* main.m in Sources */,
 				56AE4C4C1615DA30000FBF5A /* MCAppDelegate.m in Sources */,
 				56AE4C551615DA30000FBF5A /* MCViewController.m in Sources */,
+				DCD6CCBD1625C8B200011F4F /* MCMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +300,7 @@
 				56AE4C5A1615DA30000FBF5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

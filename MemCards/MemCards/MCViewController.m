@@ -7,13 +7,11 @@
 //
 
 #import "MCViewController.h"
-
+#import "MCMainViewController.h"
 @interface MCViewController ()
 
 @end
-
 @implementation MCViewController
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
