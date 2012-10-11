@@ -20,25 +20,41 @@
 
 @implementation MCGameField
 
+- (int) cardIDForX:(int)x andY:(int)y{
+    int cardId=0;
+    int kil=fieldWidth*(x-1)+y;
+    for (int i=1;i<kil;i++){        
+        cardId++;
+        
+    }
+    int result=[[myArrey objectAtIndex:cardId] intValue];
+return result;
+}
+
 -(int)getWidth{
     int imageWidth=320/fieldWidth-10;
     return imageWidth;
 }
+
 -(int) getHeight{
-    int imageHeight=460/fieldWidth-10;
+    int imageHeight=460/fieldHeight-10;
     return imageHeight;
 }
 
 -(void)printLevel{
     
-    [self setwidth:3 AndHeight:4];
-    
-    
-    NSLog(@"image height  %d\n",[ self getHeight]);
-    NSLog(@"image width  %d\n",[self getWidth]);
+    [self setwidth:2 AndHeight:3];      
     [self generateRandomField];
-   
+    NSLog(@"CardId with position [2][2] is  %d\n", [self cardIDForX:2 andY:2]);  
+    
+    
 
+}
+
+-(void) setwidth:(int) width AndHeight:(int) height{
+    fieldWidth=width;
+    fieldHeight=height;
+    
 }
 
 -(void) generateRandomField {
@@ -52,11 +68,11 @@ if(card_count==0){
             [myArrey addObject:[NSString stringWithFormat:@"%d",i]];            
         }     
     } 
+    
     for (int x = 0; x < [myArrey count]; x++) {
         int randInt = (arc4random() % ([myArrey count] - x)) + x;
         [myArrey exchangeObjectAtIndex:x withObjectAtIndex:randInt];
-    }
-    
+    }    
     
     for(int i=1;i<=fieldHeight;i++){
         for(int j=1;j<=fieldWidth;j++){             
@@ -72,12 +88,7 @@ if(card_count==0){
     
 }
 
--(void) setwidth:(int) width AndHeight:(int) height{
-    fieldWidth=width;
-    fieldHeight=height;
 
-
-}
 
 
 @end

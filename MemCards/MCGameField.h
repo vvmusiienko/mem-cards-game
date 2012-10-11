@@ -19,4 +19,5 @@
 -(void) generateRandomField;  
 -(int)getWidth;
 -(int) getHeight;
+- (int) cardIDForX:(int)x andY:(int)y;
 @end
