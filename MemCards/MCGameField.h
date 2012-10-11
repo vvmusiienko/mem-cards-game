@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface MCGameField : UIViewController
+
+
+{
+
+}
 -(void) setwidthAndHeight:(int) x:(int) y;
 -(void) generateRandomField;   
 @end
