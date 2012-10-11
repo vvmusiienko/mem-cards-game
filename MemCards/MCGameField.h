@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MCGameField : UIViewController
+@interface MCGameField : NSObject
 
 
 {
 
 }
--(void) setwidthAndHeight:(int) x:(int) y;
--(void) generateRandomField;   
+-(void)printLevel;
+-(void) setwidth:(int) width AndHeight:(int) height;
+-(void) generateRandomField;  
+-(int)getWidth;
+-(int) getHeight;
 @end

@@ -19,11 +19,9 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
-  
-    MCGameField *outMes=[MCGameField alloc];
-    [outMes  setwidthAndHeight:2 :3];
+    [super viewDidLoad];   
+     MCGameField *outMes=[[MCGameField alloc] init];
+    [outMes  printLevel];
    
  // Do any additional setup after loading the view, typically from a nib.
 }

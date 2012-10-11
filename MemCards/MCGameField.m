@@ -11,16 +11,42 @@
 @interface MCGameField ()
 {
     NSMutableArray *myArrey;
-    int image_count;;
+    int fieldWidth;
+    int fieldHeight;   
+    int image_count;
     int card_count;
 }
 @end
 
 @implementation MCGameField
- 
--(void) generateRandomField {
+
+-(int)getWidth{
+    int imageWidth=320/fieldWidth-10;
+    return imageWidth;
+}
+-(int) getHeight{
+    int imageHeight=460/fieldWidth-10;
+    return imageHeight;
+}
+
+-(void)printLevel{
     
-if(card_count==0){        
+    [self setwidth:3 AndHeight:4];
+    
+    
+    NSLog(@"image height  %d\n",[ self getHeight]);
+    NSLog(@"image width  %d\n",[self getWidth]);
+    [self generateRandomField];
+   
+
+}
+
+-(void) generateRandomField {
+    image_count=fieldHeight*fieldWidth/2;
+    card_count=0;   
+if(card_count==0){     
+    myArrey =[[NSMutableArray alloc] init];
+    
    for(int j=1;j<=2;j++){
         for(int i=1;i<=image_count;i++){
             [myArrey addObject:[NSString stringWithFormat:@"%d",i]];            
@@ -30,39 +56,28 @@ if(card_count==0){
         int randInt = (arc4random() % ([myArrey count] - x)) + x;
         [myArrey exchangeObjectAtIndex:x withObjectAtIndex:randInt];
     }
-}      
-NSLog(@"%@",[myArrey objectAtIndex:card_count]);
-
     
-}
-
--(void) setwidthAndHeight:(int) x:(int) y{
     
-    image_count=x*y/2;     
-    card_count=0;    
-    myArrey =[[NSMutableArray alloc] init];
-    int kil=0;
-    for(int i=1;i<=y;i++){
-        for(int j=1;j<=x;j++){             
-            [self generateRandomField ];
+    for(int i=1;i<=fieldHeight;i++){
+        for(int j=1;j<=fieldWidth;j++){             
+            //NSLog(@"%@",[myArrey objectAtIndex:card_count] );
+           printf("%d   ",[[myArrey objectAtIndex:card_count] intValue]);
             card_count++;
-           kil++;
+            
         }
-        NSLog(@"\n");
+        printf("\n");
     }
+}      
+  
+    
+}
+
+-(void) setwidth:(int) width AndHeight:(int) height{
+    fieldWidth=width;
+    fieldHeight=height;
 
 
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
 
 @end
