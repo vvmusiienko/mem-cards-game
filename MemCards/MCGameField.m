@@ -41,11 +41,22 @@ return result;
     return imageHeight;
 }
 
--(void)printLevel{
-    
+-(void)printLevel{    
     [self setwidth:2 AndHeight:3];      
     [self generateRandomField];
-    NSLog(@"CardId with position [2][2] is  %d\n", [self cardIDForX:2 andY:2]);  
+    card_count=0;   
+
+    for(int i=1;i<=fieldHeight;i++){
+        for(int j=1;j<=fieldWidth;j++){             
+            //NSLog(@"%@",[myArrey objectAtIndex:card_count] );
+            printf("%d   ",[[myArrey objectAtIndex:card_count] intValue]);
+            card_count++;
+            
+        }
+        printf("\n");
+    }
+ 
+NSLog(@"CardId with position [2][2] is  %d\n", [self cardIDForX:2 andY:2]);  
     
     
 
@@ -59,8 +70,7 @@ return result;
 
 -(void) generateRandomField {
     image_count=fieldHeight*fieldWidth/2;
-    card_count=0;   
-if(card_count==0){     
+   
     myArrey =[[NSMutableArray alloc] init];
     
    for(int j=1;j<=2;j++){
@@ -74,16 +84,7 @@ if(card_count==0){
         [myArrey exchangeObjectAtIndex:x withObjectAtIndex:randInt];
     }    
     
-    for(int i=1;i<=fieldHeight;i++){
-        for(int j=1;j<=fieldWidth;j++){             
-            //NSLog(@"%@",[myArrey objectAtIndex:card_count] );
-           printf("%d   ",[[myArrey objectAtIndex:card_count] intValue]);
-            card_count++;
-            
-        }
-        printf("\n");
-    }
-}      
+       
   
     
 }
