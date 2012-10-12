@@ -84,12 +84,6 @@ NSLog(@"CardId with position [2][2] is  %d\n", [self cardIDForX:2 andY:2]);
         [myArrey exchangeObjectAtIndex:x withObjectAtIndex:randInt];
     }    
     
-       
-  
-    
 }
-
-
-
 
 @end
