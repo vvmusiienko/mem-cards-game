@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import "MCSoundSystem.h"
+
 
 @interface MCMainViewController : UIViewController
 {
-    
     UILabel *highScore;
-    
 }
+
 @property (nonatomic,retain) IBOutlet UILabel *highScore;
 -(IBAction)playButton:(id)sender;
+-(IBAction)playMusic;
 @end

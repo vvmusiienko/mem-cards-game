@@ -20,6 +20,9 @@
     
 }
 
+- (IBAction)playMusic {
+    [[MCSoundSystem sharedSoundSystem] playEffect:@"music"];
+}
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -42,5 +45,4 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 @end
