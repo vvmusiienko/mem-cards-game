@@ -11,7 +11,8 @@
 
 
 @implementation MCSoundSystem
-@synthesize sound;
+@synthesize effect;
+@synthesize music;
 +(MCSoundSystem *) sharedSoundSystem{
     static MCSoundSystem *sharedSoundSystem = nil;
     if (sharedSoundSystem == nil){
@@ -20,29 +21,25 @@
     return sharedSoundSystem;
 }
 -(void) playEffect: (NSString*) effectName{
-    if (effectName == @"click") {
-        NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"click" ofType:@"mp3"]];
-        sound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-        [sound setNumberOfLoops:0];
-        [sound prepareToPlay];
-        [sound play];
-    } else if (effectName == @"card") {
-        NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"card" ofType:@"mp3"]];
-        sound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-        [sound setNumberOfLoops:0];
-        [sound prepareToPlay];
-        [sound play];
-    } else if (effectName == @"music") {
-        NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"music" ofType:@"mp3"]];
-        sound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-        [sound setNumberOfLoops:-1];
-        [sound prepareToPlay];
-        [sound play];
-    } else if (effectName == @"pause") {
-        [sound pause];
-    } else if (effectName == @"play"){
-        [sound play];
-    }
+        NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource: effectName ofType:@"mp3"]];
+        effect = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        [effect setNumberOfLoops:0];
+        [effect prepareToPlay];
+        [effect play];
 }
+-(void) playMusic: (NSString*) effectName{
+    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource: effectName ofType:@"mp3"]];
+    music = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [music setNumberOfLoops:-1];
+    [music prepareToPlay];
+    [music play];
+}
+-(void) play{
+    [music play];
+}
+-(void) pause{
+    [music pause];
+}
+
 @end
 

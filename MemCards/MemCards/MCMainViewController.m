@@ -21,7 +21,19 @@
 }
 
 - (IBAction)playMusic {
-    [[MCSoundSystem sharedSoundSystem] playEffect:@"music"];
+    [[MCSoundSystem sharedSoundSystem] playMusic:@"music"];
+}
+
+- (IBAction)play {
+    [[MCSoundSystem sharedSoundSystem] play];
+}
+
+- (IBAction)stop {
+    [[MCSoundSystem sharedSoundSystem] pause];
+}
+
+- (IBAction)playEffect {
+    [[MCSoundSystem sharedSoundSystem] playEffect:@"click"];
 }
 
 

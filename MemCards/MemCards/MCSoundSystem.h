@@ -11,10 +11,16 @@
 
 
 @interface MCSoundSystem : NSObject {
-    AVAudioPlayer *sound;
+    AVAudioPlayer *effect;
+    AVAudioPlayer *music;
+    
 }
-@property (nonatomic, retain) AVAudioPlayer *sound;
+@property (nonatomic, retain) AVAudioPlayer *effect;
+@property (nonatomic, retain) AVAudioPlayer *music;
 
 +(MCSoundSystem *) sharedSoundSystem;
 -(void) playEffect: (NSString*) effectName;
+-(void) playMusic: (NSString*) effectName;
+-(void) play;
+-(void) pause;
 @end

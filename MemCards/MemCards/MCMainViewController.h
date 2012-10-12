@@ -19,4 +19,7 @@
 @property (nonatomic,retain) IBOutlet UILabel *highScore;
 -(IBAction)playButton:(id)sender;
 -(IBAction)playMusic;
+- (IBAction)play;
+- (IBAction)stop;
+-(IBAction)playEffect;
 @end
