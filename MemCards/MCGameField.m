@@ -13,6 +13,8 @@
     NSMutableArray *myArrey;
     int fieldWidth;
     int fieldHeight;   
+    int imageWidth;
+    int imageHeight;
     int image_count;
     int card_count;
 }
@@ -20,30 +22,59 @@
 
 @implementation MCGameField
 
-- (int) cardIDForX:(int)x andY:(int)y{
-    int cardId=0;
-    int kil=fieldWidth*(x-1)+y;
-    for (int i=1;i<kil;i++){        
-        cardId++;
-        
+- (int) cardIDInThePointX:(int)x andY:(int)y{
+    int width=imageWidth;
+    int height=imageHeight;
+    int atX;
+    int atY;    
+    if ((x> width )&&(x%width!=0)) {        
+        atX=x/width+1;
+        if(atX>fieldWidth){
+            atX=atX-1;
+        }              
     }
-    int result=[[myArrey objectAtIndex:cardId] intValue];
+    if (x%width==0) {
+        atX =x/width;
+    }
+    if (x<=width) {
+        atX= 1;  
+    }    
+    
+    if ((y> height )&&(y%height!=0)) {
+      atY=y/height+1;        
+        if (atY>fieldHeight){
+            atY=atY-1;
+        }
+    }
+    if (y%height==0) {
+        atY =y/height;
+    }
+    if (y<=height) {
+        atY= 1;  
+    }  
+   
+    int result=[self cardIDForX:atX-1 andY:atY-1];
+    return result;
+}
+
+
+- (int) cardIDForX:(int)x andY:(int)y{
+    int position_in_array=fieldWidth*y+x;
+    int result=[[myArrey objectAtIndex:position_in_array] intValue];
 return result;
 }
 
 -(int)getWidth{
-    int imageWidth=320/fieldWidth-10;
-    return imageWidth;
+    
+    return fieldWidth;
 }
 
 -(int) getHeight{
-    int imageHeight=460/fieldHeight-10;
-    return imageHeight;
+   return fieldHeight;
 }
 
 -(void)printLevel{    
-    [self setwidth:2 AndHeight:3];      
-    [self generateRandomField];
+    
     card_count=0;   
 
     for(int i=1;i<=fieldHeight;i++){
@@ -55,8 +86,8 @@ return result;
         }
         printf("\n");
     }
- 
-NSLog(@"CardId with position [2][2] is  %d\n", [self cardIDForX:2 andY:2]);  
+
+
     
     
 
@@ -65,6 +96,8 @@ NSLog(@"CardId with position [2][2] is  %d\n", [self cardIDForX:2 andY:2]);
 -(void) setwidth:(int) width AndHeight:(int) height{
     fieldWidth=width;
     fieldHeight=height;
+     imageWidth=320/width;
+    imageHeight=460/height;
     
 }
 

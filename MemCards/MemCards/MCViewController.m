@@ -15,20 +15,33 @@
 
 @implementation MCViewController
 
+-(IBAction) viewClick:(id)sender{
 
+
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];   
-     MCGameField *outMes=[[MCGameField alloc] init];
+    MCGameField *outMes=[[MCGameField alloc] init];
+    [outMes setwidth:2 AndHeight:3];      
+    [outMes generateRandomField];
     [outMes  printLevel];
-   
+    NSLog(@"CardId with position  [0][0] is  %d\n", [outMes cardIDForX:0 andY:0]);  
+    NSLog(@"CardId with position  [1][0] is  %d\n", [outMes cardIDForX:1 andY:0]);  
+    NSLog(@"CardId with position  [0][1] is  %d\n", [outMes cardIDForX:0 andY:1]);  
+    NSLog(@"CardId with position  [1][1] is  %d\n", [outMes cardIDForX:1 andY:1]);  
+    NSLog(@"CardId with position  [0][2] is  %d\n", [outMes cardIDForX:0 andY:2]);  
+    NSLog(@"CardId with position  [1][2] is  %d\n", [outMes cardIDForX:1 andY:2]);  
+    NSLog(@"CardId in position with coordinates [0][0] is  %d\n", [outMes cardIDInThePointX:0 andY:0]);  
+    NSLog(@"CardId in position with coordinates [320][460] is  %d\n", [outMes cardIDInThePointX:320 andY:460]);  
+    
  // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
 {
-    [super viewDidUnload];
+   [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
 
