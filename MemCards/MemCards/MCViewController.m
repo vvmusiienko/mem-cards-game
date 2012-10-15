@@ -7,18 +7,14 @@
 //
 
 #import "MCViewController.h"
-
+#import "MCMainViewController.h"
 @interface MCViewController ()
 
 @end
-
 @implementation MCViewController
-
 - (void)viewDidLoad
-
 {
     [super viewDidLoad];
-    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
