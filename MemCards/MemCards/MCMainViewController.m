@@ -20,6 +20,52 @@
     
 }
 
+-(IBAction)showLeader{
+    GKLeaderboardViewController *leaderboardController = [[GKLeaderboardViewController alloc] init];
+    if (leaderboardController != nil) {
+        leaderboardController.leaderboardDelegate = self;
+        [self presentViewController:leaderboardController animated:YES completion:NULL];
+    }
+}
+
+-(void)leaderboardViewControllerDidFinish: (GKLeaderboardViewController *)viewController{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (IBAction)email:(id)sender {
+    MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
+    mailComposer.mailComposeDelegate=self;
+    NSArray *emailAddresses = [[NSArray alloc] initWithObjects:@"me@company.com", nil];
+    NSString *sendSubject = [[NSString alloc] initWithFormat:@"Memmory Game"];
+    NSString *sendMessage = [[NSString alloc] initWithFormat:@"Hi! Checkout this cool game bro!"];
+    
+    [mailComposer setToRecipients:emailAddresses];
+    [mailComposer setSubject:sendSubject];
+    [mailComposer setMessageBody:sendMessage isHTML:NO];
+    [self presentViewController:mailComposer animated:YES completion:NULL];
+}
+
+
+-(void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
+- (IBAction)playMusic {
+    [[MCSoundSystem sharedSoundSystem] playMusic:@"music"];
+}
+
+- (IBAction)play {
+    [[MCSoundSystem sharedSoundSystem] play];
+}
+
+- (IBAction)stop {
+    [[MCSoundSystem sharedSoundSystem] pause];
+}
+
+- (IBAction)playEffect {
+    [[MCSoundSystem sharedSoundSystem] playEffect:@"click"];
+}
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -42,5 +88,4 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 @end
