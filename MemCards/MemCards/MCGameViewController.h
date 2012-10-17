@@ -16,4 +16,5 @@
 }
 - (IBAction)mainMenuTapped:(id)sender;
 -(void)showActivity;
+-(void)generateFieldWithCards;
 @end

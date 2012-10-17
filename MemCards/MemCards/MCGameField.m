@@ -103,10 +103,18 @@ return result;
 
 -(void) generateRandomField {
     image_count=fieldHeight*fieldWidth/2;
-   
+    int repeatCard=0;
+    if (image_count<=8) {
+        image_count=image_count;
+        repeatCard=2;
+    }else {
+        image_count=8;
+        repeatCard=fieldWidth*fieldHeight/8;
+    }
+  
     myArrey =[[NSMutableArray alloc] init];
     
-   for(int j=1;j<=2;j++){
+   for(int j=1;j<=repeatCard;j++){
         for(int i=1;i<=image_count;i++){
             [myArrey addObject:[NSString stringWithFormat:@"%d",i]];            
         }     
