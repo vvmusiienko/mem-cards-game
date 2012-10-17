@@ -8,6 +8,7 @@
 
 #import "MCViewController.h"
 #import "MCMainViewController.h"
+#import "MCCard.h"
 @interface MCViewController ()
 
 @end
@@ -15,6 +16,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   
+    
+   
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
