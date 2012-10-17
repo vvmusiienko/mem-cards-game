@@ -31,6 +31,7 @@
 		F7270022162D970D006BF865 /* card5.png in Resources */ = {isa = PBXBuildFile; fileRef = F727001C162D970D006BF865 /* card5.png */; };
 		F7270023162D970D006BF865 /* card6.png in Resources */ = {isa = PBXBuildFile; fileRef = F727001D162D970D006BF865 /* card6.png */; };
 		F76FEBD5162DAC480077B4F6 /* MCCard.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FEBD4162DAC480077B4F6 /* MCCard.m */; };
+		F7EDE436162E86100022BAA4 /* MCGameField.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EDE435162E86100022BAA4 /* MCGameField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,8 @@
 		F727001D162D970D006BF865 /* card6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card6.png; sourceTree = "<group>"; };
 		F76FEBD3162DAC480077B4F6 /* MCCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCard.h; sourceTree = "<group>"; };
 		F76FEBD4162DAC480077B4F6 /* MCCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCard.m; sourceTree = "<group>"; };
+		F7EDE434162E86100022BAA4 /* MCGameField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGameField.h; sourceTree = "<group>"; };
+		F7EDE435162E86100022BAA4 /* MCGameField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGameField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				F76FEBD3162DAC480077B4F6 /* MCCard.h */,
 				F76FEBD4162DAC480077B4F6 /* MCCard.m */,
 				56AE4C441615DA30000FBF5A /* InfoPlist.strings */,
+				F7EDE434162E86100022BAA4 /* MCGameField.h */,
+				F7EDE435162E86100022BAA4 /* MCGameField.m */,
 				56AE4C471615DA30000FBF5A /* main.m */,
 				56AE4C491615DA30000FBF5A /* MemCards-Prefix.pch */,
 				AA3DE20A1628295C00615FC9 /* MCSoundSystem.h */,
@@ -235,6 +240,7 @@
 				DCD6CCBD1625C8B200011F4F /* MCMainViewController.m in Sources */,
 				AA3DE20C1628295C00615FC9 /* MCSoundSystem.m in Sources */,
 				F76FEBD5162DAC480077B4F6 /* MCCard.m in Sources */,
+				F7EDE436162E86100022BAA4 /* MCGameField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
