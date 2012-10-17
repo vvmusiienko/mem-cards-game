@@ -32,6 +32,7 @@
 		F7270023162D970D006BF865 /* card6.png in Resources */ = {isa = PBXBuildFile; fileRef = F727001D162D970D006BF865 /* card6.png */; };
 		F76FEBD5162DAC480077B4F6 /* MCCard.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FEBD4162DAC480077B4F6 /* MCCard.m */; };
 		F7EDE436162E86100022BAA4 /* MCGameField.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EDE435162E86100022BAA4 /* MCGameField.m */; };
+		AC51E275162C48E500E2BB3B /* MCGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC51E274162C48E500E2BB3B /* MCGameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,8 @@
 		F76FEBD4162DAC480077B4F6 /* MCCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCard.m; sourceTree = "<group>"; };
 		F7EDE434162E86100022BAA4 /* MCGameField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGameField.h; sourceTree = "<group>"; };
 		F7EDE435162E86100022BAA4 /* MCGameField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGameField.m; sourceTree = "<group>"; };
+		AC51E273162C48E500E2BB3B /* MCGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGameViewController.h; sourceTree = "<group>"; };
+		AC51E274162C48E500E2BB3B /* MCGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,8 @@
 				56AE4C531615DA30000FBF5A /* MCViewController.h */,
 				56AE4C541615DA30000FBF5A /* MCViewController.m */,
 				DCD6CCBB1625C8B200011F4F /* MCMainViewController.h */,
+				AC51E273162C48E500E2BB3B /* MCGameViewController.h */,
+				AC51E274162C48E500E2BB3B /* MCGameViewController.m */,
 				DCD6CCBC1625C8B200011F4F /* MCMainViewController.m */,
 				56AE4C421615DA30000FBF5A /* Supporting Files */,
 			);
@@ -241,6 +246,7 @@
 				AA3DE20C1628295C00615FC9 /* MCSoundSystem.m in Sources */,
 				F76FEBD5162DAC480077B4F6 /* MCCard.m in Sources */,
 				F7EDE436162E86100022BAA4 /* MCGameField.m in Sources */,
+				AC51E275162C48E500E2BB3B /* MCGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
