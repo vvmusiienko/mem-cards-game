@@ -21,6 +21,8 @@
 		AAAC8302162864DC007A245D /* card.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAAC82FF162864DC007A245D /* card.mp3 */; };
 		AAAC8303162864DC007A245D /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAAC8300162864DC007A245D /* click.mp3 */; };
 		AAAC8304162864DC007A245D /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAAC8301162864DC007A245D /* music.mp3 */; };
+		AADF6E45162E7FD700803147 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AADF6E44162E7FD700803147 /* MessageUI.framework */; };
+		AAE698DE162DE99E0008DE2F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE698DD162DE99E0008DE2F /* GameKit.framework */; };
 		DCD6CCBD1625C8B200011F4F /* MCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD6CCBC1625C8B200011F4F /* MCMainViewController.m */; };
 		F727001E162D970D006BF865 /* card1.png in Resources */ = {isa = PBXBuildFile; fileRef = F7270018162D970D006BF865 /* card1.png */; };
 		F727001F162D970D006BF865 /* card2.png in Resources */ = {isa = PBXBuildFile; fileRef = F7270019162D970D006BF865 /* card2.png */; };
@@ -52,6 +54,8 @@
 		AAAC82FF162864DC007A245D /* card.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = card.mp3; sourceTree = "<group>"; };
 		AAAC8300162864DC007A245D /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
 		AAAC8301162864DC007A245D /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
+		AADF6E44162E7FD700803147 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		AAE698DD162DE99E0008DE2F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		DCD6CCBB1625C8B200011F4F /* MCMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMainViewController.h; sourceTree = "<group>"; };
 		DCD6CCBC1625C8B200011F4F /* MCMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMainViewController.m; sourceTree = "<group>"; };
 		F7270018162D970D006BF865 /* card1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card1.png; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AADF6E45162E7FD700803147 /* MessageUI.framework in Frameworks */,
+				AAE698DE162DE99E0008DE2F /* GameKit.framework in Frameworks */,
 				AA3DE2081628293A00615FC9 /* AVFoundation.framework in Frameworks */,
 				56AE4C3C1615DA30000FBF5A /* UIKit.framework in Frameworks */,
 				56AE4C3E1615DA30000FBF5A /* Foundation.framework in Frameworks */,
@@ -82,6 +88,8 @@
 		56AE4C2C1615DA30000FBF5A = {
 			isa = PBXGroup;
 			children = (
+				AADF6E44162E7FD700803147 /* MessageUI.framework */,
+				AAE698DD162DE99E0008DE2F /* GameKit.framework */,
 				AA3DE2071628293A00615FC9 /* AVFoundation.framework */,
 				56AE4C411615DA30000FBF5A /* MemCards */,
 				56AE4C3A1615DA30000FBF5A /* Frameworks */,
