@@ -24,6 +24,7 @@
 		AADF6E45162E7FD700803147 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AADF6E44162E7FD700803147 /* MessageUI.framework */; };
 		AAE698DE162DE99E0008DE2F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE698DD162DE99E0008DE2F /* GameKit.framework */; };
 		AC51E275162C48E500E2BB3B /* MCGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC51E274162C48E500E2BB3B /* MCGameViewController.m */; };
+		CF206C45162F2CEB00844DC8 /* MCGameEndViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF206C44162F2CEB00844DC8 /* MCGameEndViewController.m */; };
 		DCD6CCBD1625C8B200011F4F /* MCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD6CCBC1625C8B200011F4F /* MCMainViewController.m */; };
 		F727001E162D970D006BF865 /* card1.png in Resources */ = {isa = PBXBuildFile; fileRef = F7270018162D970D006BF865 /* card1.png */; };
 		F727001F162D970D006BF865 /* card2.png in Resources */ = {isa = PBXBuildFile; fileRef = F7270019162D970D006BF865 /* card2.png */; };
@@ -62,6 +63,8 @@
 		AAE698DD162DE99E0008DE2F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		AC51E273162C48E500E2BB3B /* MCGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGameViewController.h; sourceTree = "<group>"; };
 		AC51E274162C48E500E2BB3B /* MCGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGameViewController.m; sourceTree = "<group>"; };
+		CF206C43162F2CEB00844DC8 /* MCGameEndViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGameEndViewController.h; sourceTree = "<group>"; };
+		CF206C44162F2CEB00844DC8 /* MCGameEndViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGameEndViewController.m; sourceTree = "<group>"; };
 		DCD6CCBB1625C8B200011F4F /* MCMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMainViewController.h; sourceTree = "<group>"; };
 		DCD6CCBC1625C8B200011F4F /* MCMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMainViewController.m; sourceTree = "<group>"; };
 		F7270018162D970D006BF865 /* card1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card1.png; sourceTree = "<group>"; };
@@ -98,9 +101,6 @@
 		56AE4C2C1615DA30000FBF5A = {
 			isa = PBXGroup;
 			children = (
-				AADF6E44162E7FD700803147 /* MessageUI.framework */,
-				AAE698DD162DE99E0008DE2F /* GameKit.framework */,
-				AA3DE2071628293A00615FC9 /* AVFoundation.framework */,
 				56AE4C411615DA30000FBF5A /* MemCards */,
 				56AE4C3A1615DA30000FBF5A /* Frameworks */,
 				56AE4C381615DA30000FBF5A /* Products */,
@@ -118,6 +118,9 @@
 		56AE4C3A1615DA30000FBF5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AADF6E44162E7FD700803147 /* MessageUI.framework */,
+				AAE698DD162DE99E0008DE2F /* GameKit.framework */,
+				AA3DE2071628293A00615FC9 /* AVFoundation.framework */,
 				56AE4C3B1615DA30000FBF5A /* UIKit.framework */,
 				56AE4C3D1615DA30000FBF5A /* Foundation.framework */,
 				56AE4C3F1615DA30000FBF5A /* CoreGraphics.framework */,
@@ -128,24 +131,13 @@
 		56AE4C411615DA30000FBF5A /* MemCards */ = {
 			isa = PBXGroup;
 			children = (
+				56D6129116300F350050EAC5 /* Models */,
+				56D6128F16300F090050EAC5 /* Controllers */,
 				56AE4C4A1615DA30000FBF5A /* MCAppDelegate.h */,
 				56AE4C4B1615DA30000FBF5A /* MCAppDelegate.m */,
 				56AE4C4D1615DA30000FBF5A /* MainStoryboard_iPhone.storyboard */,
-				F7270018162D970D006BF865 /* card1.png */,
-				F7270019162D970D006BF865 /* card2.png */,
-				F7B1F10B162F4B4F00B2A030 /* card8.png */,
-				F727001A162D970D006BF865 /* card3.png */,
-				F7B1F108162F4B1300B2A030 /* card7.png */,
-				F727001B162D970D006BF865 /* card4.png */,
-				F727001C162D970D006BF865 /* card5.png */,
-				F727001D162D970D006BF865 /* card6.png */,
 				56AE4C501615DA30000FBF5A /* MainStoryboard_iPad.storyboard */,
-				56AE4C531615DA30000FBF5A /* MCViewController.h */,
-				56AE4C541615DA30000FBF5A /* MCViewController.m */,
-				DCD6CCBB1625C8B200011F4F /* MCMainViewController.h */,
-				AC51E273162C48E500E2BB3B /* MCGameViewController.h */,
-				AC51E274162C48E500E2BB3B /* MCGameViewController.m */,
-				DCD6CCBC1625C8B200011F4F /* MCMainViewController.m */,
+				56D6129216300F8E0050EAC5 /* Resources */,
 				56AE4C421615DA30000FBF5A /* Supporting Files */,
 			);
 			path = MemCards;
@@ -154,21 +146,58 @@
 		56AE4C421615DA30000FBF5A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AAAC82FF162864DC007A245D /* card.mp3 */,
-				AAAC8300162864DC007A245D /* click.mp3 */,
-				AAAC8301162864DC007A245D /* music.mp3 */,
 				56AE4C431615DA30000FBF5A /* MemCards-Info.plist */,
-				F76FEBD3162DAC480077B4F6 /* MCCard.h */,
-				F76FEBD4162DAC480077B4F6 /* MCCard.m */,
 				56AE4C441615DA30000FBF5A /* InfoPlist.strings */,
-				F7EDE434162E86100022BAA4 /* MCGameField.h */,
-				F7EDE435162E86100022BAA4 /* MCGameField.m */,
 				56AE4C471615DA30000FBF5A /* main.m */,
 				56AE4C491615DA30000FBF5A /* MemCards-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		56D6128F16300F090050EAC5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF206C43162F2CEB00844DC8 /* MCGameEndViewController.h */,
+				CF206C44162F2CEB00844DC8 /* MCGameEndViewController.m */,
+				56AE4C531615DA30000FBF5A /* MCViewController.h */,
+				56AE4C541615DA30000FBF5A /* MCViewController.m */,
+				DCD6CCBB1625C8B200011F4F /* MCMainViewController.h */,
+				DCD6CCBC1625C8B200011F4F /* MCMainViewController.m */,
+				AC51E273162C48E500E2BB3B /* MCGameViewController.h */,
+				AC51E274162C48E500E2BB3B /* MCGameViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		56D6129116300F350050EAC5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F76FEBD3162DAC480077B4F6 /* MCCard.h */,
+				F76FEBD4162DAC480077B4F6 /* MCCard.m */,
+				F7EDE434162E86100022BAA4 /* MCGameField.h */,
+				F7EDE435162E86100022BAA4 /* MCGameField.m */,
 				AA3DE20A1628295C00615FC9 /* MCSoundSystem.h */,
 				AA3DE20B1628295C00615FC9 /* MCSoundSystem.m */,
 			);
-			name = "Supporting Files";
+			name = Models;
+			sourceTree = "<group>";
+		};
+		56D6129216300F8E0050EAC5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AAAC82FF162864DC007A245D /* card.mp3 */,
+				AAAC8300162864DC007A245D /* click.mp3 */,
+				AAAC8301162864DC007A245D /* music.mp3 */,
+				F7270018162D970D006BF865 /* card1.png */,
+				F7270019162D970D006BF865 /* card2.png */,
+				F7B1F10B162F4B4F00B2A030 /* card8.png */,
+				F727001A162D970D006BF865 /* card3.png */,
+				F7B1F108162F4B1300B2A030 /* card7.png */,
+				F727001B162D970D006BF865 /* card4.png */,
+				F727001C162D970D006BF865 /* card5.png */,
+				F727001D162D970D006BF865 /* card6.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +284,7 @@
 				F76FEBD5162DAC480077B4F6 /* MCCard.m in Sources */,
 				F7EDE436162E86100022BAA4 /* MCGameField.m in Sources */,
 				AC51E275162C48E500E2BB3B /* MCGameViewController.m in Sources */,
+				CF206C45162F2CEB00844DC8 /* MCGameEndViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
