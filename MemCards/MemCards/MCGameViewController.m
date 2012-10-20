@@ -99,12 +99,12 @@
 
 - (void)viewDidLoad
 {
-    
+    [[MCCard sharedCard] setToZeroImageCount];
     i=0;j=0;
     
     [super viewDidLoad];
     [self generateFieldWithCards];
-    
+    //[self performSelector:@selector(rotateCards) withObject:nil afterDelay:5.0];
 	[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showActivity) userInfo: nil repeats:YES];
 }
 

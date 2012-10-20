@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MCGameField.h"
+
 
 @interface MCCard : UIView<UIGestureRecognizerDelegate>
-{ 
+{
     
 }
-
++(MCCard *) sharedCard;
 -(id)initWithCardId:(int)cardId;
-
+-(void) setToZeroImageCount;
 @end
