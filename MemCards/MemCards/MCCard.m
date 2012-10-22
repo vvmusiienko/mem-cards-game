@@ -71,8 +71,14 @@ int imageCount=0;
                        } completion:nil];
 
 }
+-(void) hideImage{
+    [frontImageView setHidden:YES];
+}
 
--(IBAction) imageClick:(UIGestureRecognizer *) sender {  
+
+
+
+-(IBAction) imageClick:(UIGestureRecognizer *) sender {
     
     currentCard = self;
     currentImage = frontImageView;
@@ -82,15 +88,15 @@ int imageCount=0;
         lastSelCard = currentCard;
     } else if (cardStatus==FALSE && lastSelImage!=nil && lastSelImage.tag!=currentImage.tag){
         [currentCard CardFlipUp];
-        [lastSelCard performSelector:@selector(CardFlipDown) withObject:nil afterDelay:0.75];
-        [currentCard performSelector:@selector(CardFlipDown) withObject:nil afterDelay:0.75];
+        [lastSelCard performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1];
+        [currentCard performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1];
         lastSelImage=nil;
         currentImage=nil;
     } else if (cardStatus==FALSE && lastSelImage.tag == currentImage.tag){
         [currentCard CardFlipUp];
         imageCount-=2;
-        [lastSelImage setHidden:YES];
-        [currentImage setHidden:YES];
+        [currentCard performSelector:@selector(hideImage) withObject:nil afterDelay:1];
+        [lastSelCard performSelector:@selector(hideImage) withObject:nil afterDelay:1];
         lastSelImage=nil;
         currentImage=nil;
         if (imageCount==0) {
