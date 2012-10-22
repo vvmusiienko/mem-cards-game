@@ -19,7 +19,7 @@
 -(IBAction)playButton:(id)sender{
     
     [highScore setText:@"0"];
-    
+
 }
 
 -(IBAction)showLeader{
@@ -52,22 +52,6 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-
-- (IBAction)playMusic {
-    [[MCSoundSystem sharedSoundSystem] playMusic:@"music"];
-}
-
-- (IBAction)play {
-    [[MCSoundSystem sharedSoundSystem] play];
-}
-
-- (IBAction)stop {
-    [[MCSoundSystem sharedSoundSystem] pause];
-}
-
-- (IBAction)playEffect {
-    [[MCSoundSystem sharedSoundSystem] playEffect:@"click"];
-}
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

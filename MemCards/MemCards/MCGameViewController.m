@@ -49,30 +49,13 @@
             MCCard *card=[[MCCard alloc] initWithCardId:[testField cardIDForX:row andY:cell]];
             card.frame=CGRectMake(left, top, cellwidth-padding, cellhight-padding);
             [self.view addSubview:card];
-            
+            [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:5.0];
         }topSep=0;
         
     }
-    
-    /*
-     if (row%2==0 ) {
-     MCCard *card=[[MCCard alloc] initWithCardId:8];
-     card.frame=CGRectMake(160, 0, 6, 460);
-     [self.view addSubview:card];
-     row--;
-     }else{
-     
-     if (cell%2==0) {
-     MCCard *card1=[[MCCard alloc] initWithCardId:8];
-     card1.frame=CGRectMake(0, 215, 320, 6);
-     [self.view addSubview:card1];
-     cell--;
-     
-     }else{ 
-     */
-    
-    
+
 }
+
 
 - (IBAction)mainMenuTapped:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
@@ -104,7 +87,7 @@
     
     [super viewDidLoad];
     [self generateFieldWithCards];
-    //[self performSelector:@selector(rotateCards) withObject:nil afterDelay:5.0];
+
 	[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showActivity) userInfo: nil repeats:YES];
 }
 
