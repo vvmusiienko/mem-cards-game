@@ -73,7 +73,11 @@ BOOL mayBeClicked;
     mayBeClicked = YES;
 }
 -(void) hideImage{
-    [frontImageView setHidden:YES];
+    [UIView beginAnimations: @"identifier" context: @"hideImage"];
+    [UIView setAnimationDuration: 0.75];
+    [UIView setAnimationRepeatCount: 1];
+    frontImageView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.0001, 0.0001);
+    [UIView commitAnimations];
     mayBeClicked = YES;
 }
 -(IBAction) imageClick:(UIGestureRecognizer *) sender {
