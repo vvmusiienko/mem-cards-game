@@ -106,7 +106,12 @@
     [self generateFieldWithCards];
     
 	[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showActivity) userInfo: nil repeats:YES];
-}
+    
+    /*--------------------------------------------------------------------------------------*/
+    NSString *defaultPath = [[NSBundle mainBundle] pathForResource:@"Plist.plist" ofType:nil];
+    plistWithLevels= [NSArray arrayWithContentsOfFile:defaultPath];
+    NSLog(@"%@",plistWithLevels );
+    }
 
 - (void)didReceiveMemoryWarning
 {

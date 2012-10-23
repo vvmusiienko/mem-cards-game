@@ -13,6 +13,8 @@
     IBOutlet UILabel *myScore;
     
     int i,j;
+    
+   NSArray *plistWithLevels; 
 }
 - (IBAction)mainMenuTapped:(id)sender;
 -(void)showActivity;
