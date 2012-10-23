@@ -13,6 +13,7 @@ UIImageView *currentImage;
 MCCard *lastSelCard;
 MCCard *currentCard;
 int imageCount=0;
+BOOL mayBeClicked;
 
 @interface MCCard () {
 
@@ -69,17 +70,15 @@ int imageCount=0;
                        options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
                            imageView.image = secondImage;
                        } completion:nil];
-
+    mayBeClicked = YES;
 }
 -(void) hideImage{
     [frontImageView setHidden:YES];
+    mayBeClicked = YES;
 }
-
-
-
-
 -(IBAction) imageClick:(UIGestureRecognizer *) sender {
-    
+    if (mayBeClicked == YES) {
+        
     currentCard = self;
     currentImage = frontImageView;
     if (cardStatus==FALSE && lastSelImage==nil){
@@ -88,11 +87,13 @@ int imageCount=0;
         lastSelCard = currentCard;
     } else if (cardStatus==FALSE && lastSelImage!=nil && lastSelImage.tag!=currentImage.tag){
         [currentCard CardFlipUp];
+        mayBeClicked = NO;
         [lastSelCard performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1];
         [currentCard performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1];
         lastSelImage=nil;
         currentImage=nil;
     } else if (cardStatus==FALSE && lastSelImage.tag == currentImage.tag){
+        mayBeClicked = NO;
         [currentCard CardFlipUp];
         imageCount-=2;
         [currentCard performSelector:@selector(hideImage) withObject:nil afterDelay:1];
@@ -102,12 +103,10 @@ int imageCount=0;
         if (imageCount==0) {
             //go to LevelEndView
         }
-        
+    }
+    
     }
 }
-
-
-
 
 /*
  //debuger function
@@ -115,6 +114,7 @@ int imageCount=0;
  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello" message:mess delegate:nil cancelButtonTitle:@"I'm awesome." otherButtonTitles:nil];
  [alert show];
  */
+
 @end
 
 

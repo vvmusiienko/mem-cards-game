@@ -49,7 +49,7 @@
             MCCard *card=[[MCCard alloc] initWithCardId:[testField cardIDForX:row andY:cell]];
             card.frame=CGRectMake(left, top, cellwidth-padding, cellhight-padding);
             [self.view addSubview:card];
-            [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:5.0];
+            [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1.0];
         }topSep=0;
         
     }
