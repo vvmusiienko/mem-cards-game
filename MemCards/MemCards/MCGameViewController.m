@@ -108,7 +108,7 @@
 	[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showActivity) userInfo: nil repeats:YES];
     
     /*--------------------------------------------------------------------------------------*/
-    NSString *defaultPath = [[NSBundle mainBundle] pathForResource:@"Plist.plist" ofType:nil];
+    NSString *defaultPath = [[NSBundle mainBundle] pathForResource:@"Levels.plist" ofType:nil];
     plistWithLevels= [NSArray arrayWithContentsOfFile:defaultPath];
     NSLog(@"%@",plistWithLevels );
     }
