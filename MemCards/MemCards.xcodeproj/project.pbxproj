@@ -39,6 +39,7 @@
 		DC0CC52616301869002E62FC /* 144_144.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0CC52516301869002E62FC /* 144_144.png */; };
 		DCAB6FBF1630804400EED2F9 /* MCLevelEndViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAB6FBE1630804400EED2F9 /* MCLevelEndViewController.m */; };
 		DCD6CCBD1625C8B200011F4F /* MCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD6CCBC1625C8B200011F4F /* MCMainViewController.m */; };
+		F19DAF371635360B0062962F /* BackSide.png in Resources */ = {isa = PBXBuildFile; fileRef = F19DAF361635360B0062962F /* BackSide.png */; };
 		F727001E162D970D006BF865 /* card1.png in Resources */ = {isa = PBXBuildFile; fileRef = F7270018162D970D006BF865 /* card1.png */; };
 		F727001F162D970D006BF865 /* card2.png in Resources */ = {isa = PBXBuildFile; fileRef = F7270019162D970D006BF865 /* card2.png */; };
 		F7270020162D970D006BF865 /* card3.png in Resources */ = {isa = PBXBuildFile; fileRef = F727001A162D970D006BF865 /* card3.png */; };
@@ -94,6 +95,7 @@
 		DCAB6FBE1630804400EED2F9 /* MCLevelEndViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCLevelEndViewController.m; sourceTree = "<group>"; };
 		DCD6CCBB1625C8B200011F4F /* MCMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMainViewController.h; sourceTree = "<group>"; };
 		DCD6CCBC1625C8B200011F4F /* MCMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMainViewController.m; sourceTree = "<group>"; };
+		F19DAF361635360B0062962F /* BackSide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackSide.png; sourceTree = "<group>"; };
 		F7270018162D970D006BF865 /* card1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card1.png; sourceTree = "<group>"; };
 		F7270019162D970D006BF865 /* card2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card2.png; sourceTree = "<group>"; };
 		F727001A162D970D006BF865 /* card3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card3.png; sourceTree = "<group>"; };
@@ -184,17 +186,17 @@
 		56D6128F16300F090050EAC5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DCD6CCBB1625C8B200011F4F /* MCMainViewController.h */,
+				DCD6CCBC1625C8B200011F4F /* MCMainViewController.m */,
+				AC51E273162C48E500E2BB3B /* MCGameViewController.h */,
+				AC51E274162C48E500E2BB3B /* MCGameViewController.m */,
+				DCAB6FBD1630804400EED2F9 /* MCLevelEndViewController.h */,
+				DCAB6FBE1630804400EED2F9 /* MCLevelEndViewController.m */,
 				CF206C43162F2CEB00844DC8 /* MCGameEndViewController.h */,
 				CF206C44162F2CEB00844DC8 /* MCGameEndViewController.m */,
 				56AE4C531615DA30000FBF5A /* MCViewController.h */,
 				56AE4C541615DA30000FBF5A /* MCViewController.m */,
-				DCAB6FBD1630804400EED2F9 /* MCLevelEndViewController.h */,
-				DCAB6FBE1630804400EED2F9 /* MCLevelEndViewController.m */,
-				DCD6CCBB1625C8B200011F4F /* MCMainViewController.h */,
-				DCD6CCBC1625C8B200011F4F /* MCMainViewController.m */,
-				AC51E273162C48E500E2BB3B /* MCGameViewController.h */,
 				AC38EC541636E4C40026EFB8 /* Levels.plist */,
-				AC51E274162C48E500E2BB3B /* MCGameViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -215,6 +217,7 @@
 		56D6129216300F8E0050EAC5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F19DAF361635360B0062962F /* BackSide.png */,
 				DC0CC52516301869002E62FC /* 144_144.png */,
 				DC0CC52316301866002E62FC /* 72_72.png */,
 				DC0CC52116301863002E62FC /* Default-Portrait~ipad.png */,
@@ -319,6 +322,7 @@
 				DC0CC52416301866002E62FC /* 72_72.png in Resources */,
 				DC0CC52616301869002E62FC /* 144_144.png in Resources */,
 				AC38EC551636E4C40026EFB8 /* Levels.plist in Resources */,
+				F19DAF371635360B0062962F /* BackSide.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +434,7 @@
 				GCC_PREFIX_HEADER = "MemCards/MemCards-Prefix.pch";
 				INFOPLIST_FILE = "MemCards/MemCards-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -441,6 +446,7 @@
 				GCC_PREFIX_HEADER = "MemCards/MemCards-Prefix.pch";
 				INFOPLIST_FILE = "MemCards/MemCards-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
