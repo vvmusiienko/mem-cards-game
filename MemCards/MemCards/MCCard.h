@@ -8,21 +8,27 @@
 
 #import <UIKit/UIKit.h>
 #import "MCGameField.h"
+@protocol MCCardDelegate <NSObject>
+@required
 
-@interface MCCard : UIView<UIGestureRecognizerDelegate>
+    -(void) gameLogic;
+@end
+
+@interface MCCard : UIView <UIGestureRecognizerDelegate>
 {
-    UIImageView *frontImageView;
-    BOOL cardStatus;
     NSString *img_name;
     UIImageView *imageView;
+    @public
+    UIImageView *frontImageView;
+    id<MCCardDelegate> delegate;
 }
-+(MCCard *) sharedCard;
+
 -(id)initWithCardId:(int)cardId;
--(void) setToZeroImageCount;
 -(void) CardFlipUp;
 -(void) CardFlipDown;
-
-
+-(void) hideImage;
+-(IBAction) imageClick:(UIGestureRecognizer *) sender;
+@property(retain)id delegate;
 
 
 

@@ -9,11 +9,9 @@
 #import "MCGameViewController.h"
 #import "MCGameField.h"
 #import "MCCard.h"
-@interface MCGameViewController ()
-
-@end
 
 @implementation MCGameViewController
+
 -(void)generateFieldWithCards{
     
     MCGameField *testField=[[MCGameField alloc] init];
@@ -53,8 +51,62 @@
         }topSep=0;
         
     }
+    
 
 }
+
+//-------------------------------------------------------------------------------------
+-(void) gameLogic{
+    NSString *mess = [[NSString alloc] initWithFormat:@"%i", imageCount];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello" message:mess delegate:nil cancelButtonTitle:@"I'm awesome." otherButtonTitles:nil];
+    [alert show];
+     if (mayBeClicked == YES) {
+       
+        if (cardStatus==FALSE && lastSelCard==nil){
+            [currentCard CardFlipUp];
+            lastSelCard = currentCard;
+        } else if (cardStatus==FALSE && lastSelCard!=nil && lastSelCard->frontImageView.tag!=currentCard->frontImageView.tag){
+            [currentCard CardFlipUp];
+            mayBeClicked = NO;
+            [lastSelCard performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1];
+            [currentCard performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1];
+            lastSelCard=nil;
+            currentCard=nil;
+        } else if (cardStatus==FALSE && lastSelCard->frontImageView.tag==currentCard->frontImageView.tag){
+            mayBeClicked = NO;
+            [currentCard CardFlipUp];
+            imageCount-=2;
+            [currentCard performSelector:@selector(hideImage) withObject:nil afterDelay:1];
+            [lastSelCard performSelector:@selector(hideImage) withObject:nil afterDelay:1];
+            lastSelCard=nil;
+            currentCard=nil;
+            if (imageCount==0) {
+                //go to LevelEndView
+                
+            }
+        }
+        
+    }
+}
+-(void) changeCardStatus{
+    if (cardStatus == TRUE) {
+        cardStatus = FALSE;
+    } else {
+        cardStatus = TRUE;
+    }
+}
+-(void) mayBeClickedMethod{
+    mayBeClicked = YES;
+}
+-(void) imageCountPlusPlus{
+    imageCount++;
+}
+/*-(void) currentCardEqualSelf: (UIView *) current{
+    currentCard = current;
+    [currentCard setHidden:YES];
+}*/
+
+//----------------------------------------------------------------------------------------------
 
 
 - (IBAction)mainMenuTapped:(id)sender {
@@ -82,12 +134,14 @@
 
 - (void)viewDidLoad
 {
-    [[MCCard sharedCard] setToZeroImageCount];
+    imageCount=0;
     i=0;j=0;
     
     [super viewDidLoad];
     [self generateFieldWithCards];
-
+    NSString *mess = [[NSString alloc] initWithFormat:@"%i", imageCount];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello" message:mess delegate:nil cancelButtonTitle:@"I'm awesome." otherButtonTitles:nil];
+    [alert show];
 	[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showActivity) userInfo: nil repeats:YES];
     
     /*--------------------------------------------------------------------------------------*/
