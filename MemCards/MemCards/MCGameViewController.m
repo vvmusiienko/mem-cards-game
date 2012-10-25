@@ -48,6 +48,7 @@
             card.frame=CGRectMake(left, top, cellwidth-padding, cellhight-padding);
             [self.view addSubview:card];
             [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1.0];
+            card.delegate = self;
             imageCount++;
         }topSep=0;
         
