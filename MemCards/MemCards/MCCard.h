@@ -8,19 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import "MCGameField.h"
-@protocol MCCardDelegate <NSObject>
-@required
 
-    -(void) gameLogic;
+@class MCCard;
+
+@protocol MCCardDelegate <NSObject>
+//@optional
+-(void)cardClicked:(MCCard*) cardSelf;
+-(void) test;
 @end
 
 @interface MCCard : UIView <UIGestureRecognizerDelegate>
 {
     NSString *img_name;
     UIImageView *imageView;
-    @public
     UIImageView *frontImageView;
     id<MCCardDelegate> delegate;
+    BOOL cardIsFlippedUp;
+    BOOL cardMayBeClicked;
+    int idForCard;
 }
 
 -(id)initWithCardId:(int)cardId;
@@ -28,7 +33,15 @@
 -(void) CardFlipDown;
 -(void) hideImage;
 -(IBAction) imageClick:(UIGestureRecognizer *) sender;
-@property(retain)id delegate;
+-(int) getIdForCard;
+-(BOOL) getCardMayBeClicked;
+-(BOOL) getCardIsFleppedUp;
+-(void) setCardMayBeClicked: (BOOL) changePermission;
+@property(nonatomic)id delegate;
+@property(readonly) BOOL cardIsFlippedUp;
+@property(readonly) BOOL cardMayBeClicked;
+
+
 
 
 

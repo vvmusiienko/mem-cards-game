@@ -15,27 +15,22 @@
     
     int i,j;
     
-   NSArray *plistWithLevels;
-
-//objects needed for gameLogic---------------------------------------------------
-    BOOL cardStatus;
+    NSArray *plistWithLevels;
+    
+    //objects needed for gameLogic---------------------------------------------------
     MCCard *lastSelCard;
     MCCard *currentCard;
     int imageCount;
-    BOOL mayBeClicked;
-//objects needed for gameLogic---------------------------------------------------    
-
+    //objects needed for gameLogic---------------------------------------------------
+    
 }
 -(IBAction)mainMenuTapped:(id)sender;
 -(void)showActivity;
 -(void)generateFieldWithCards;
 
 //objects needed for gameLogic---------------------------------------------------
--(void) changeCardStatus;
--(void) mayBeClickedMethod;
--(void) imageCountPlusPlus;
--(void) gameLogic;
-//-(void) currentCardEqualSelf: (UIView*) current;
+-(void)cardClicked:(MCCard*) cardSelf;
 //objects needed for gameLogic---------------------------------------------------
 
 @end
+

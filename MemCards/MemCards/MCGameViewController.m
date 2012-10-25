@@ -48,6 +48,7 @@
             card.frame=CGRectMake(left, top, cellwidth-padding, cellhight-padding);
             [self.view addSubview:card];
             [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1.0];
+            imageCount++;
         }topSep=0;
         
     }
@@ -56,24 +57,21 @@
 }
 
 //-------------------------------------------------------------------------------------
--(void) gameLogic{
-    NSString *mess = [[NSString alloc] initWithFormat:@"%i", imageCount];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello" message:mess delegate:nil cancelButtonTitle:@"I'm awesome." otherButtonTitles:nil];
-    [alert show];
-     if (mayBeClicked == YES) {
-       
-        if (cardStatus==FALSE && lastSelCard==nil){
+-(void)cardClicked:(MCCard*) cardSelf {
+    currentCard = cardSelf;
+    if ([currentCard getCardMayBeClicked] == YES) {
+        if ([currentCard getCardIsFleppedUp]==NO && lastSelCard==nil){
             [currentCard CardFlipUp];
             lastSelCard = currentCard;
-        } else if (cardStatus==FALSE && lastSelCard!=nil && lastSelCard->frontImageView.tag!=currentCard->frontImageView.tag){
+        } else if ([currentCard getCardIsFleppedUp]==NO && lastSelCard!=nil && [lastSelCard getIdForCard] != [currentCard getIdForCard]){
             [currentCard CardFlipUp];
-            mayBeClicked = NO;
+            [currentCard setCardMayBeClicked:NO];
             [lastSelCard performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1];
             [currentCard performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1];
             lastSelCard=nil;
             currentCard=nil;
-        } else if (cardStatus==FALSE && lastSelCard->frontImageView.tag==currentCard->frontImageView.tag){
-            mayBeClicked = NO;
+        } else if ([currentCard getCardIsFleppedUp]==NO && [lastSelCard getIdForCard] == [currentCard getIdForCard]){
+            [currentCard setCardMayBeClicked:NO];
             [currentCard CardFlipUp];
             imageCount-=2;
             [currentCard performSelector:@selector(hideImage) withObject:nil afterDelay:1];
@@ -85,26 +83,9 @@
                 
             }
         }
-        
     }
 }
--(void) changeCardStatus{
-    if (cardStatus == TRUE) {
-        cardStatus = FALSE;
-    } else {
-        cardStatus = TRUE;
-    }
-}
--(void) mayBeClickedMethod{
-    mayBeClicked = YES;
-}
--(void) imageCountPlusPlus{
-    imageCount++;
-}
-/*-(void) currentCardEqualSelf: (UIView *) current{
-    currentCard = current;
-    [currentCard setHidden:YES];
-}*/
+
 
 //----------------------------------------------------------------------------------------------
 
@@ -139,9 +120,7 @@
     
     [super viewDidLoad];
     [self generateFieldWithCards];
-    NSString *mess = [[NSString alloc] initWithFormat:@"%i", imageCount];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello" message:mess delegate:nil cancelButtonTitle:@"I'm awesome." otherButtonTitles:nil];
-    [alert show];
+
 	[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showActivity) userInfo: nil repeats:YES];
     
     /*--------------------------------------------------------------------------------------*/

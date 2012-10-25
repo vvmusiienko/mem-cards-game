@@ -11,14 +11,15 @@
 
 @implementation MCCard
 @synthesize delegate;
+@synthesize cardIsFlippedUp;
+@synthesize cardMayBeClicked;
 
 -(id)initWithCardId:(int)cardId{
     if (self = [super init]) {
-        [delegate changeCardStatus];
+        cardIsFlippedUp = YES;
         img_name  = [[NSString alloc] initWithFormat:@"card%d", cardId];
         frontImageView= [[UIImageView alloc] initWithImage:[UIImage imageNamed:img_name]];
-        frontImageView.tag=cardId;
-        [delegate imageCountPlusPlus];
+        idForCard = cardId;
         frontImageView.userInteractionEnabled = YES;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageClick:)];
         [frontImageView addGestureRecognizer:tapGesture];
@@ -27,8 +28,7 @@
     return self;
 }
 -(IBAction) imageClick:(UIGestureRecognizer *) sender {
-    //[delegate currentCardEqualSelf: self];
-    [delegate gameLogic];
+    [delegate cardClicked:self];
 }
 
 - (void) setFrame:(CGRect)frame
@@ -46,17 +46,17 @@
                        options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
                            imageView.image = secondImage;
                        } completion:nil];
-    [delegate changeCardStatus];
+    cardIsFlippedUp = YES;
 }
 -(void) CardFlipDown{
     imageView = frontImageView;
     UIImage *secondImage = [UIImage imageNamed:@"BackSide.png"];
-    [delegate changeCardStatus];
+    cardIsFlippedUp = NO;
     [UIView transitionWithView:imageView duration:0.75
                        options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
                            imageView.image = secondImage;
                        } completion:nil];
-    [delegate mayBeClickedMethod];
+    cardMayBeClicked = YES;
 }
 -(void) hideImage{
     [UIView beginAnimations: @"identifier" context: @"hideImage"];
@@ -64,11 +64,20 @@
     [UIView setAnimationRepeatCount: 1];
     frontImageView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.0001, 0.0001);
     [UIView commitAnimations];
-    [delegate mayBeClickedMethod];
+    cardMayBeClicked = YES;
 }
-
-
-
+-(int) getIdForCard{
+    return idForCard;
+}
+-(BOOL) getCardMayBeClicked{
+    return cardMayBeClicked;
+}
+-(void) setCardMayBeClicked: (BOOL) changePermission {
+    cardMayBeClicked = changePermission;
+}
+-(BOOL) getCardIsFleppedUp{
+    return cardIsFlippedUp;
+}
 /*
  //debuger function
  NSString *mess = [[NSString alloc] initWithFormat:@"%i", imageCount];
@@ -77,8 +86,6 @@
  */
 
 @end
-
-
 
 
 
