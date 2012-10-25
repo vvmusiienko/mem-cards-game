@@ -12,9 +12,8 @@
 @class MCCard;
 
 @protocol MCCardDelegate <NSObject>
-//@optional
+@optional
 -(void)cardClicked:(MCCard*) cardSelf;
--(void) test;
 @end
 
 @interface MCCard : UIView <UIGestureRecognizerDelegate>
