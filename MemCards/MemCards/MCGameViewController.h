@@ -16,7 +16,7 @@
     int i,j;
     
     NSArray *plistWithLevels;
-    
+    NSArray *currentLevelSettings;
     //objects needed for gameLogic---------------------------------------------------
     MCCard *lastSelCard;
     MCCard *currentCard;

@@ -15,7 +15,7 @@
 -(void)generateFieldWithCards{
     
     MCGameField *testField=[[MCGameField alloc] init];
-    [testField setwidth:4 AndHeight:4];
+    [testField setwidth:[[currentLevelSettings objectAtIndex:2] intValue] AndHeight:[[currentLevelSettings objectAtIndex:3] intValue]];
     [testField generateRandomField]; 
     
     int sepWidth=10;
@@ -116,6 +116,10 @@
 
 - (void)viewDidLoad
 {
+    NSString *defaultPath = [[NSBundle mainBundle] pathForResource:@"Levels.plist" ofType:nil];
+    plistWithLevels= [NSArray arrayWithContentsOfFile:defaultPath];
+    NSLog(@"%@",plistWithLevels );
+    currentLevelSettings=[plistWithLevels objectAtIndex:6];
     imageCount=0;
     i=0;j=0;
     
@@ -125,10 +129,7 @@
 	[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showActivity) userInfo: nil repeats:YES];
     
     /*--------------------------------------------------------------------------------------*/
-    NSString *defaultPath = [[NSBundle mainBundle] pathForResource:@"Levels.plist" ofType:nil];
-    plistWithLevels= [NSArray arrayWithContentsOfFile:defaultPath];
-    NSLog(@"%@",plistWithLevels );
-    }
+ }
 
 - (void)didReceiveMemoryWarning
 {
