@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MCCard.h"
-
+#import "MCAppDelegate.h"
 @interface MCGameViewController : UIViewController <MCCardDelegate>{
     IBOutlet UILabel *myTimer;
     IBOutlet UILabel *myScore;

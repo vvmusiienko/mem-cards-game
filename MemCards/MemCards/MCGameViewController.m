@@ -9,6 +9,7 @@
 #import "MCGameViewController.h"
 #import "MCGameField.h"
 #import "MCCard.h"
+#import "MCLevelEndViewController.h"
 
 @implementation MCGameViewController
 
@@ -80,7 +81,12 @@
             lastSelCard=nil;
             currentCard=nil;
             if (imageCount==0) {
-                //go to LevelEndView
+                
+                    if (levelId<6) {
+                        //go to LevelEndView
+                        [self performSegueWithIdentifier:@"timer" sender:self];
+                   
+                }   else [self performSegueWithIdentifier:@"GameEnd" sender:self];
                 
             }
         }
@@ -92,8 +98,11 @@
 
 
 - (IBAction)mainMenuTapped:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    //[self dismissModalViewControllerAnimated:YES];
+  //  levelId=0;
 }
+
+
 
 -(void)showActivity{
     i = [myTimer.text intValue];
@@ -119,7 +128,7 @@
     NSString *defaultPath = [[NSBundle mainBundle] pathForResource:@"Levels.plist" ofType:nil];
     plistWithLevels= [NSArray arrayWithContentsOfFile:defaultPath];
     NSLog(@"%@",plistWithLevels );
-    currentLevelSettings=[plistWithLevels objectAtIndex:6];
+    currentLevelSettings=[plistWithLevels objectAtIndex:levelId];
     imageCount=0;
     i=0;j=0;
     
@@ -127,7 +136,7 @@
     [self generateFieldWithCards];
 
 	[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showActivity) userInfo: nil repeats:YES];
-    
+   
     /*--------------------------------------------------------------------------------------*/
  }
 

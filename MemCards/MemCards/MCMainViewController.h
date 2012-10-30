@@ -11,7 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MessageUI/MessageUI.h>
 #import "MCSoundSystem.h"
-
+#import "MCAppDelegate.h"
 
 @interface MCMainViewController : UIViewController
 {
