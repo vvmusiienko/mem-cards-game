@@ -7,7 +7,8 @@
 //
 
 #import "MCCard.h"
-
+#import "MCAppDelegate.h"
+#include <QuartzCore/QuartzCore.h>
 
 @implementation MCCard
 @synthesize delegate;
@@ -23,6 +24,7 @@
         frontImageView.userInteractionEnabled = YES;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageClick:)];
         [frontImageView addGestureRecognizer:tapGesture];
+        [self getRounding];
         [self addSubview:frontImageView];
     }
     return self;
@@ -50,7 +52,7 @@
 }
 -(void) CardFlipDown{
     imageView = frontImageView;
-    UIImage *secondImage = [UIImage imageNamed:@"BackSide.png"];
+    UIImage *secondImage =imageShirt;
     cardIsFlippedUp = NO;
     [UIView transitionWithView:imageView duration:0.75
                        options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
@@ -77,6 +79,12 @@
 }
 -(BOOL) getCardIsFleppedUp{
     return cardIsFlippedUp;
+}
+-(void) getRounding{
+    CALayer * ourLayer = [self layer]; 
+    ourLayer.cornerRadius = 8.0f;               
+    ourLayer.masksToBounds = YES;               
+    ourLayer.borderWidth = 0.0f;            
 }
 /*
  //debuger function

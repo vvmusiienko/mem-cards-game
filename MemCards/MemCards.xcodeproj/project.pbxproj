@@ -46,9 +46,18 @@
 		F7270021162D970D006BF865 /* card4.png in Resources */ = {isa = PBXBuildFile; fileRef = F727001B162D970D006BF865 /* card4.png */; };
 		F7270022162D970D006BF865 /* card5.png in Resources */ = {isa = PBXBuildFile; fileRef = F727001C162D970D006BF865 /* card5.png */; };
 		F7270023162D970D006BF865 /* card6.png in Resources */ = {isa = PBXBuildFile; fileRef = F727001D162D970D006BF865 /* card6.png */; };
+		F72DBEC1164066160008A23D /* MCImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72DBEC0164066160008A23D /* MCImagePickerViewController.m */; };
 		F76FEBD5162DAC480077B4F6 /* MCCard.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FEBD4162DAC480077B4F6 /* MCCard.m */; };
 		F7B1F109162F4B1300B2A030 /* card7.png in Resources */ = {isa = PBXBuildFile; fileRef = F7B1F108162F4B1300B2A030 /* card7.png */; };
 		F7B1F10C162F4B4F00B2A030 /* card8.png in Resources */ = {isa = PBXBuildFile; fileRef = F7B1F10B162F4B4F00B2A030 /* card8.png */; };
+		F7BE9F3816413B23009C4233 /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BE9F3016413B22009C4233 /* icon1.png */; };
+		F7BE9F3916413B23009C4233 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BE9F3116413B22009C4233 /* icon2.png */; };
+		F7BE9F3A16413B23009C4233 /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BE9F3216413B22009C4233 /* icon3.png */; };
+		F7BE9F3B16413B23009C4233 /* icon4.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BE9F3316413B22009C4233 /* icon4.png */; };
+		F7BE9F3C16413B23009C4233 /* icon5.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BE9F3416413B22009C4233 /* icon5.png */; };
+		F7BE9F3D16413B23009C4233 /* icon6.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BE9F3516413B22009C4233 /* icon6.png */; };
+		F7BE9F3E16413B23009C4233 /* icon7.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BE9F3616413B23009C4233 /* icon7.png */; };
+		F7BE9F3F16413B23009C4233 /* icon8.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BE9F3716413B23009C4233 /* icon8.png */; };
 		F7EDE436162E86100022BAA4 /* MCGameField.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EDE435162E86100022BAA4 /* MCGameField.m */; };
 /* End PBXBuildFile section */
 
@@ -102,10 +111,20 @@
 		F727001B162D970D006BF865 /* card4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card4.png; sourceTree = "<group>"; };
 		F727001C162D970D006BF865 /* card5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card5.png; sourceTree = "<group>"; };
 		F727001D162D970D006BF865 /* card6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card6.png; sourceTree = "<group>"; };
+		F72DBEBF164066160008A23D /* MCImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCImagePickerViewController.h; sourceTree = "<group>"; };
+		F72DBEC0164066160008A23D /* MCImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCImagePickerViewController.m; sourceTree = "<group>"; };
 		F76FEBD3162DAC480077B4F6 /* MCCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCard.h; sourceTree = "<group>"; };
 		F76FEBD4162DAC480077B4F6 /* MCCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCard.m; sourceTree = "<group>"; };
 		F7B1F108162F4B1300B2A030 /* card7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card7.png; sourceTree = "<group>"; };
 		F7B1F10B162F4B4F00B2A030 /* card8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card8.png; sourceTree = "<group>"; };
+		F7BE9F3016413B22009C4233 /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
+		F7BE9F3116413B22009C4233 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
+		F7BE9F3216413B22009C4233 /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
+		F7BE9F3316413B22009C4233 /* icon4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon4.png; sourceTree = "<group>"; };
+		F7BE9F3416413B22009C4233 /* icon5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon5.png; sourceTree = "<group>"; };
+		F7BE9F3516413B22009C4233 /* icon6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon6.png; sourceTree = "<group>"; };
+		F7BE9F3616413B23009C4233 /* icon7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon7.png; sourceTree = "<group>"; };
+		F7BE9F3716413B23009C4233 /* icon8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon8.png; sourceTree = "<group>"; };
 		F7EDE434162E86100022BAA4 /* MCGameField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGameField.h; sourceTree = "<group>"; };
 		F7EDE435162E86100022BAA4 /* MCGameField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGameField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +216,8 @@
 				56AE4C531615DA30000FBF5A /* MCViewController.h */,
 				56AE4C541615DA30000FBF5A /* MCViewController.m */,
 				AC38EC541636E4C40026EFB8 /* Levels.plist */,
+				F72DBEBF164066160008A23D /* MCImagePickerViewController.h */,
+				F72DBEC0164066160008A23D /* MCImagePickerViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -223,6 +244,14 @@
 				DC0CC52116301863002E62FC /* Default-Portrait~ipad.png */,
 				DC0CC51F16301852002E62FC /* Default-Portrait@2x~ipad.png */,
 				DC0CC51D1630184F002E62FC /* Default-Landscape~ipad.png */,
+				F7BE9F3016413B22009C4233 /* icon1.png */,
+				F7BE9F3116413B22009C4233 /* icon2.png */,
+				F7BE9F3216413B22009C4233 /* icon3.png */,
+				F7BE9F3316413B22009C4233 /* icon4.png */,
+				F7BE9F3416413B22009C4233 /* icon5.png */,
+				F7BE9F3516413B22009C4233 /* icon6.png */,
+				F7BE9F3616413B23009C4233 /* icon7.png */,
+				F7BE9F3716413B23009C4233 /* icon8.png */,
 				DC0CC51B16301847002E62FC /* Default-Landscape@2x~ipad.png */,
 				DC0CC5191630183C002E62FC /* Default-568h@2x.png */,
 				DC0CC51716301839002E62FC /* Default@2x.png */,
@@ -323,6 +352,14 @@
 				DC0CC52616301869002E62FC /* 144_144.png in Resources */,
 				AC38EC551636E4C40026EFB8 /* Levels.plist in Resources */,
 				F19DAF371635360B0062962F /* BackSide.png in Resources */,
+				F7BE9F3816413B23009C4233 /* icon1.png in Resources */,
+				F7BE9F3916413B23009C4233 /* icon2.png in Resources */,
+				F7BE9F3A16413B23009C4233 /* icon3.png in Resources */,
+				F7BE9F3B16413B23009C4233 /* icon4.png in Resources */,
+				F7BE9F3C16413B23009C4233 /* icon5.png in Resources */,
+				F7BE9F3D16413B23009C4233 /* icon6.png in Resources */,
+				F7BE9F3E16413B23009C4233 /* icon7.png in Resources */,
+				F7BE9F3F16413B23009C4233 /* icon8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +380,7 @@
 				AC51E275162C48E500E2BB3B /* MCGameViewController.m in Sources */,
 				CF206C45162F2CEB00844DC8 /* MCGameEndViewController.m in Sources */,
 				DCAB6FBF1630804400EED2F9 /* MCLevelEndViewController.m in Sources */,
+				F72DBEC1164066160008A23D /* MCImagePickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

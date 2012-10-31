@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+UIImage *imageShirt;
+NSString * documentsDirectoryPath;
 @interface MCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
