@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
@@ -83,6 +83,21 @@
                                 </state>
                                 <connections>
                                     <action selector="email:" destination="2" eventType="touchUpInside" id="NVg-SC-h1I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="U1F-FK-Jzu">
+                                <rect key="frame" x="20" y="71" width="132" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Send Tweet">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tweetit:" destination="2" eventType="touchUpInside" id="m5f-Y4-Slx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -337,13 +352,46 @@
             <point key="canvasLocation" x="1175" y="-52"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="MCGameEndViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCGameEndViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="allscores" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeSpent" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MCGameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCGameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="mainMenuTapped:"/>
+                <relationship kind="outlet" name="myScore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="myTimer" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MCLevelEndViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCLevelEndViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="nextLevelTapped:"/>
+                <relationship kind="outlet" name="moves_done" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scores_for_this_level" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="time_left" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="time_spend_for_level" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MCMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCMainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="highScore" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="WO6-SZ-81h"/>
+        <segue reference="GZ6-f3-ddF"/>
         <segue reference="ik8-G2-wFg"/>
     </inferredMetricsTieBreakers>
 </document>

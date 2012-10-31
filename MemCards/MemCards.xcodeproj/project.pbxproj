@@ -23,6 +23,7 @@
 		AAAC8304162864DC007A245D /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAAC8301162864DC007A245D /* music.mp3 */; };
 		AADF6E45162E7FD700803147 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AADF6E44162E7FD700803147 /* MessageUI.framework */; };
 		AAE698DE162DE99E0008DE2F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE698DD162DE99E0008DE2F /* GameKit.framework */; };
+		AC26900116418BED005F0982 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC26900016418BED005F0982 /* Twitter.framework */; };
 		AC38EC551636E4C40026EFB8 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC38EC541636E4C40026EFB8 /* Levels.plist */; };
 		AC51E275162C48E500E2BB3B /* MCGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC51E274162C48E500E2BB3B /* MCGameViewController.m */; };
 		CF206C45162F2CEB00844DC8 /* MCGameEndViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF206C44162F2CEB00844DC8 /* MCGameEndViewController.m */; };
@@ -75,6 +76,7 @@
 		AAAC8301162864DC007A245D /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		AADF6E44162E7FD700803147 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		AAE698DD162DE99E0008DE2F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		AC26900016418BED005F0982 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		AC38EC541636E4C40026EFB8 /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
 		AC51E273162C48E500E2BB3B /* MCGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGameViewController.h; sourceTree = "<group>"; };
 		AC51E274162C48E500E2BB3B /* MCGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGameViewController.m; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC26900116418BED005F0982 /* Twitter.framework in Frameworks */,
 				AADF6E45162E7FD700803147 /* MessageUI.framework in Frameworks */,
 				AAE698DE162DE99E0008DE2F /* GameKit.framework in Frameworks */,
 				AA3DE2081628293A00615FC9 /* AVFoundation.framework in Frameworks */,
@@ -130,6 +133,7 @@
 		56AE4C2C1615DA30000FBF5A = {
 			isa = PBXGroup;
 			children = (
+				AC26900016418BED005F0982 /* Twitter.framework */,
 				56AE4C411615DA30000FBF5A /* MemCards */,
 				56AE4C3A1615DA30000FBF5A /* Frameworks */,
 				56AE4C381615DA30000FBF5A /* Products */,
