@@ -14,7 +14,7 @@
 
 -(void)generateFieldWithCards{
     
-    MCGameField *testField=[[MCGameField alloc] init];
+     MCGameField *testField=[[MCGameField alloc] init];
     [testField setwidth:[[currentLevelSettings objectAtIndex:2] intValue] AndHeight:[[currentLevelSettings objectAtIndex:3] intValue]];
     [testField generateRandomField]; 
     
@@ -47,7 +47,7 @@
             MCCard *card=[[MCCard alloc] initWithCardId:[testField cardIDForX:row andY:cell]];
             card.frame=CGRectMake(left, top, cellwidth-padding, cellhight-padding);
             [self.view addSubview:card];
-            [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1.0];
+            [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:3.5];
             card.delegate = self;
             imageCount++;
         }topSep=0;

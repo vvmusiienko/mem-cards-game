@@ -35,7 +35,11 @@
 -(int) getIdForCard;
 -(BOOL) getCardMayBeClicked;
 -(BOOL) getCardIsFleppedUp;
+-(void) definitionOfPlaceMove: (int) cardId;
 -(void) setCardMayBeClicked: (BOOL) changePermission;
+- (void) moveImage:(UIImageView *)image duration:(NSTimeInterval)duration
+            curve:(int)curve x:(CGFloat)x y:(CGFloat)y;
+
 @property(nonatomic)id delegate;
 @property(readonly) BOOL cardIsFlippedUp;
 @property(readonly) BOOL cardMayBeClicked;
