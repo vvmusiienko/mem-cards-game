@@ -16,6 +16,7 @@
 
 @implementation MCMainViewController
 @synthesize highScore;
+
 -(IBAction)playButton:(id)sender{
     
     [highScore setText:@"0"];
