@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+int levelId;
 @interface MCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

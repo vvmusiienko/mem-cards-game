@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MCAppDelegate.h"
 @interface MCLevelEndViewController : UIViewController
 {
     IBOutlet   UILabel *moves_done;
@@ -23,5 +23,8 @@
 -(void) setTimeForLevel:(int)timeForLevel; //Min time to pass level in second
 -(void) setScores:(int)scores;
 -(void) startExtraScoresAnim;
+
+- (IBAction)nextLevelTapped:(id)sender;
+
 
 @end

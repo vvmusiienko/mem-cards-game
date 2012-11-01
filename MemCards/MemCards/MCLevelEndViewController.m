@@ -71,6 +71,11 @@
         scores_for_this_level.text = [NSString stringWithFormat:@"%d", newScores];}
     
     
+    
+}
+
+- (IBAction)nextLevelTapped:(id)sender {
+      levelId=levelId+1;
 }
 
 
