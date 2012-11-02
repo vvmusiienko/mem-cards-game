@@ -92,7 +92,7 @@
                 allTime=allTime+[[currentLevelSettings objectAtIndex:1] intValue]-[myTimer.text intValue];
 
                 
-                   if (levelId<6) {
+                   if (levelId<6 ) {
                                                 //go to LevelEndView
                         [self performSegueWithIdentifier:@"timer" sender:self];
                         
