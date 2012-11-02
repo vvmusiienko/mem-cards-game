@@ -10,7 +10,7 @@
 #import "MCGameField.h"
 #import "MCCard.h"
 #import "MCLevelEndViewController.h"
-
+#import "MCGameEndViewController.h"
 @implementation MCGameViewController
 
 -(void)generateFieldWithCards{
@@ -88,12 +88,18 @@
             lastSelCard=nil;
             currentCard=nil;
             if (imageCount==0) {
+                allScores=allScores+bonusScores+[myScore.text intValue];
+                allTime=allTime+[[currentLevelSettings objectAtIndex:1] intValue]-[myTimer.text intValue];
+
                 
-                    if (levelId<6) {
-                        //go to LevelEndView
+               /*     if (levelId<1) {
+                                                //go to LevelEndView
                         [self performSegueWithIdentifier:@"timer" sender:self];
+                        
                    
-                }   else [self performSegueWithIdentifier:@"GameEnd" sender:self];
+                }   else*/
+                
+                    [self performSegueWithIdentifier:@"GameEnd" sender:self];
                 
             }
         }
@@ -119,6 +125,13 @@
     [c setTimeForLevel:[myTimer.text intValue]];
     [c setScores:[myScore.text intValue]];
     }
+    if ([segue.identifier isEqualToString:@"GameEnd"]) {
+        MCGameEndViewController* e = (MCGameEndViewController*)segue.destinationViewController;
+        e.view;
+        [e setallscores:allScores];
+        [e setalltime:allTime];
+        
+    }
 }
 
 
@@ -128,6 +141,7 @@
     int newTime = i - 1;
     if (newTime <=0) {
         [self performSegueWithIdentifier:@"GameEnd" sender:self];
+        
     }
 	
     myTimer.text = [NSString stringWithFormat:@"%d", newTime];

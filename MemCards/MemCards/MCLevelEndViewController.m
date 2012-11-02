@@ -66,6 +66,8 @@
 
 - (IBAction)nextLevelTapped:(id)sender {
       levelId=levelId+1;
+    bonusScores=bonusScores+[scores_for_this_level.text intValue];
+    
 }
 
 

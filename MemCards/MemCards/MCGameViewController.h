@@ -16,6 +16,7 @@
     IBOutlet UILabel *myScore;
     int clicksCount;
     int i,j;
+   
     
     NSArray *plistWithLevels;
     NSArray *currentLevelSettings;

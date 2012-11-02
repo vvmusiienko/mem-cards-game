@@ -15,17 +15,21 @@
 @implementation MCGameEndViewController
 
 
-@synthesize timeSpent;
-@synthesize allscores;
+
 
 - (void)viewDidLoad
 
 { 
     [super viewDidLoad];
-    [timeSpent setText :@"Waiting result"];
-    [allscores setText:@"Waiting result"];
+ 
   
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+-(void)setalltime:(int)alltime{
+    [all_time setText:[NSString stringWithFormat:@"%d",alltime]];
+}
+-(void)setallscores:(int)allscores{
+    [all_scores setText:[NSString stringWithFormat:@"%d",allscores]];
+}
 @end
