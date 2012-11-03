@@ -58,7 +58,7 @@
         [appDelegate openSessionWithAllowLoginUI:YES];
     }
 
-    NSString *message = [NSString stringWithFormat:@"Hi guys! Checkout my new highscore in MemCards Game! %@", highScore.text];
+    NSString *message = [NSString stringWithFormat:@"Hi guys! Checkout my new highscore in MemCards Game! '%@'( at %@ )", highScore.text, [NSDate date]];
     BOOL displayedNativeDialog = [FBNativeDialogs presentShareDialogModallyFrom:self
                                                                     initialText:nil
                                                                           image:nil
