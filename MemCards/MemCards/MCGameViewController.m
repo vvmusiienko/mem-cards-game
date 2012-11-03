@@ -77,7 +77,6 @@
             card.delegate = self;
             imageCount++;
             cardsMayBeClicked = YES;
-            imageCount++;
         }topSep=0;
     }
 }
