@@ -13,10 +13,23 @@
 @synthesize window;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+   documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];    
+    
+   imageShirt = [self loadImage:@"BackSide" ofType:@"png" inDirectory:documentsDirectoryPath];
+ 
+    if (imageShirt==nil) {
+        imageShirt=[UIImage imageNamed:@"BackSide"];
+    }
     return YES;
 }
-							
+
+
+-(UIImage *) loadImage:(NSString *)fileName ofType:(NSString *)extension inDirectory:(NSString *)directoryPath {
+    UIImage * result = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@.%@", directoryPath, fileName, extension]];
+    
+    return result;
+}
+				
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

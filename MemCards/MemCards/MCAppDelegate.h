@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 int levelId;
+UIImage *imageShirt;
+NSString * documentsDirectoryPath;
 @interface MCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
