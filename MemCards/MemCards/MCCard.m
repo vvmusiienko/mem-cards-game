@@ -24,51 +24,13 @@
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageClick:)];
         [frontImageView addGestureRecognizer:tapGesture];
         [self addSubview:frontImageView];
-        [self definitionOfPlaceMove:cardId];
+     //   [self definitionOfPlaceMove:cardId];
     }
     return self;
 }
 -(IBAction) imageClick:(UIGestureRecognizer *) sender {
     [delegate cardClicked:self];
 }
-
-- (void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration
-            curve:(int)curve x:(CGFloat)x y:(CGFloat)y
-{
-    
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:duration];
-    [UIView setAnimationCurve:curve];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    
-    CGAffineTransform transform = CGAffineTransformMakeTranslation(x, y);
-    image.transform = transform;
-    
-    [UIView commitAnimations];
-    
-}
-
--(void) definitionOfPlaceMove: (int) cardId{
-    if (cardId<=2 && cardId > 0) {
-        [self moveImage:frontImageView duration:2.5
-                  curve:UIViewAnimationCurveEaseOut x:-500 y:500];
-    } else {
-        if (cardId <= 4 && cardId > 2) {
-            [self moveImage:frontImageView duration:2.5
-                      curve:UIViewAnimationCurveEaseInOut x:400 y:400];
-        } else {
-            if (cardId<=6 && cardId >4) {
-                [self moveImage:frontImageView duration:2.5
-                          curve:UIViewAnimationCurveEaseInOut x:300 y:-400];
-            } else {
-                [self moveImage:frontImageView duration:2.5
-                          curve:UIViewAnimationCurveEaseInOut x:-500 y:-500];
-                
-            }
-        }
-    }
-}
-
 - (void) setFrame:(CGRect)frame
 {
     [super setFrame:frame];

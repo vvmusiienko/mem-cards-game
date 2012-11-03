@@ -42,19 +42,48 @@
                 topSep= topSep+ sepWidth;
                 
             }
-            int left = row*cellwidth +leftSep+leftPadding+padding/2;            
-            int top =cell*cellhight+50+topSep+topPadding;  
+            
             
             MCCard *card=[[MCCard alloc] initWithCardId:[testField cardIDForX:row andY:cell]];
-            card.frame=CGRectMake(left, top, cellwidth-padding, cellhight-padding);
+            
+            [UIView beginAnimations:nil context:NULL];
+            [UIView setAnimationDuration:2];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+           //[UIView setAnimationBeginsFromCurrentState:YES];
+            for (f = 0; f<360; f=f+360/6) {
+            float x = 200*cos(f)+160;
+            float y = 200*sin(f)+230;
+            card.frame = CGRectMake(x,y, cellwidth-padding, cellhight-padding);
+            }
             [self.view addSubview:card];
+            int left = row*cellwidth +leftSep+leftPadding+padding/2;
+            int top =cell*cellhight+50+topSep+topPadding;
+            CGAffineTransform transform = CGAffineTransformMakeTranslation(0,0);
+            card.transform =transform;
+            [UIView commitAnimations];
+           
             [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:3.5];
             card.delegate = self;
             imageCount++;
         }topSep=0;
         
     }
-    
+    /*- (void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration
+     curve:(int)curve x:(CGFloat)x y:(CGFloat)y
+     {
+     
+     [UIView beginAnimations:nil context:NULL];
+     [UIView setAnimationDuration:duration];
+     [UIView setAnimationCurve:curve];
+     [UIView setAnimationBeginsFromCurrentState:YES];
+     
+     CGAffineTransform transform = CGAffineTransformMakeTranslation(x, y);
+     image.transform = transform;
+     
+     [UIView commitAnimations];
+     
+     }
+ */
 
 }
 
