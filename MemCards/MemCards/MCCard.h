@@ -23,25 +23,17 @@
     UIImageView *frontImageView;
     id<MCCardDelegate> delegate;
     BOOL cardIsFlippedUp;
-    BOOL cardMayBeClicked;
     int idForCard;
 }
-
 -(id)initWithCardId:(int)cardId;
 -(void) CardFlipUp;
 -(void) CardFlipDown;
 -(void) hideImage;
 -(IBAction) imageClick:(UIGestureRecognizer *) sender;
 -(int) getIdForCard;
--(BOOL) getCardMayBeClicked;
 -(BOOL) getCardIsFleppedUp;
--(void) setCardMayBeClicked: (BOOL) changePermission;
-
 @property(nonatomic)id delegate;
 @property(readonly) BOOL cardIsFlippedUp;
-@property(readonly) BOOL cardMayBeClicked;
-
-
 
 
 

@@ -21,15 +21,17 @@
     MCCard *lastSelCard;
     MCCard *currentCard;
     int imageCount;
-    //objects needed for gameLogic---------------------------------------------------
+    BOOL cardsMayBeClicked;
+    //objects needed for gameLogic--------------------------------------------------
     
 }
 -(IBAction)mainMenuTapped:(id)sender;
 -(void)showActivity;
 -(void)generateFieldWithCards;
 
-//objects needed for gameLogic---------------------------------------------------
+//objects needed for gameLogic--------------------------------------------------
 -(void)cardClicked:(MCCard*) cardSelf;
+-(void) cardsMayBeClickedIsEqualYes;
 //objects needed for gameLogic---------------------------------------------------
 
 @end
