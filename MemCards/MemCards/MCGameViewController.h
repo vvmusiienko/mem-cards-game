@@ -13,7 +13,7 @@
     IBOutlet UILabel *myTimer;
     IBOutlet UILabel *myScore;
     
-    int i,j;
+    int i,j,f;
     
     NSArray *plistWithLevels;
     NSArray *currentLevelSettings;
