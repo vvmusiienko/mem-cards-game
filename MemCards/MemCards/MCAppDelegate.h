@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <FacebookSDK/FacebookSDK.h>
+extern NSString *const FBSessionStateChangedNotification;
 @interface MCAppDelegate : UIResponder <UIApplicationDelegate>
-
+{
+    
+}
+- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI;
 @property (strong, nonatomic) UIWindow *window;
 
 @end
