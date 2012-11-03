@@ -18,14 +18,34 @@
     [testField setwidth:[[currentLevelSettings objectAtIndex:2] intValue] AndHeight:[[currentLevelSettings objectAtIndex:3] intValue]];
     [testField generateRandomField]; 
     
+    NSString *deviceType = [UIDevice currentDevice].model;
+    
+    
     int sepWidth=10;
     int padding=4;
     int separateX=([testField getWidth]/2-1)*sepWidth;
     int separateY=([testField getHeight]/2-1)*sepWidth;
-    int cellwidth= (320-separateX)/[testField getWidth];
-    int cellhight= (350-separateY)/[testField getHeight];
-    int leftPadding=((320 -separateX)- cellwidth*[testField getWidth])/2;
-    int topPadding=((350 -separateY)- cellhight*[testField getHeight])/2;
+    int cellwidth;
+    int cellhight;
+    int leftPadding;
+    int topPadding;
+    
+    if([deviceType isEqualToString:@"iPhone Simulator"])
+    {
+        cellwidth= (320-separateX)/[testField getWidth];
+        cellhight= (350-separateY)/[testField getHeight];
+        leftPadding=((320 -separateX)- cellwidth*[testField getWidth])/2;
+        topPadding=((350 -separateY)- cellhight*[testField getHeight])/2;
+    }
+    if([deviceType isEqualToString:@"iPad Simulator"])
+    {
+        cellwidth= (750-separateX)/[testField getWidth];
+        cellhight= (900-separateY)/[testField getHeight];
+        leftPadding=((750 -separateX)- cellwidth*[testField getWidth])/2;
+        topPadding=((900 -separateY)- cellhight*[testField getHeight])/2;     
+    }
+    
+
    
     int topSep=0;
     int leftSep=0;
