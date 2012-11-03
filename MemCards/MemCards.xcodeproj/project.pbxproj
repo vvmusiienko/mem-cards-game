@@ -16,6 +16,7 @@
 		56AE4C4F1615DA30000FBF5A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AE4C4D1615DA30000FBF5A /* MainStoryboard_iPhone.storyboard */; };
 		56AE4C521615DA30000FBF5A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AE4C501615DA30000FBF5A /* MainStoryboard_iPad.storyboard */; };
 		56AE4C551615DA30000FBF5A /* MCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AE4C541615DA30000FBF5A /* MCViewController.m */; };
+		846749711645B06F00541419 /* TwitterIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846749701645B06F00541419 /* TwitterIcon.jpg */; };
 		AA3DE2081628293A00615FC9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA3DE2071628293A00615FC9 /* AVFoundation.framework */; };
 		AA3DE20C1628295C00615FC9 /* MCSoundSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3DE20B1628295C00615FC9 /* MCSoundSystem.m */; };
 		AAAC8302162864DC007A245D /* card.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAAC82FF162864DC007A245D /* card.mp3 */; };
@@ -77,6 +78,7 @@
 		56AE4C511615DA30000FBF5A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		56AE4C531615DA30000FBF5A /* MCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCViewController.h; sourceTree = "<group>"; };
 		56AE4C541615DA30000FBF5A /* MCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCViewController.m; sourceTree = "<group>"; };
+		846749701645B06F00541419 /* TwitterIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TwitterIcon.jpg; sourceTree = "<group>"; };
 		AA3DE2071628293A00615FC9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AA3DE20A1628295C00615FC9 /* MCSoundSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSoundSystem.h; sourceTree = "<group>"; };
 		AA3DE20B1628295C00615FC9 /* MCSoundSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSoundSystem.m; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		56D6129216300F8E0050EAC5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				846749701645B06F00541419 /* TwitterIcon.jpg */,
 				F19DAF361635360B0062962F /* BackSide.png */,
 				DC0CC52516301869002E62FC /* 144_144.png */,
 				DC0CC52316301866002E62FC /* 72_72.png */,
@@ -364,6 +367,7 @@
 				F7BE9F3D16413B23009C4233 /* icon6.png in Resources */,
 				F7BE9F3E16413B23009C4233 /* icon7.png in Resources */,
 				F7BE9F3F16413B23009C4233 /* icon8.png in Resources */,
+				846749711645B06F00541419 /* TwitterIcon.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
