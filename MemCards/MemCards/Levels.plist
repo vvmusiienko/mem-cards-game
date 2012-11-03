@@ -4,43 +4,43 @@
 <array>
 	<array>
 		<string>level1</string>
-		<string>0</string>
+		<string>20</string>
 		<string>2</string>
 		<string>3</string>
 	</array>
 	<array>
 		<string>level2</string>
-		<string>0</string>
+		<string>40</string>
 		<string>3</string>
 		<string>4</string>
 	</array>
 	<array>
 		<string>level3</string>
-		<string>0</string>
+		<string>80</string>
 		<string>4</string>
 		<string>4</string>
 	</array>
 	<array>
 		<string>level4</string>
-		<string>0</string>
+		<string>120</string>
 		<string>4</string>
 		<string>6</string>
 	</array>
 	<array>
 		<string>level5</string>
-		<string>0</string>
+		<string>160</string>
 		<string>6</string>
 		<string>6</string>
 	</array>
 	<array>
 		<string>level6</string>
-		<string>0</string>
+		<string>200</string>
 		<string>6</string>
 		<string>8</string>
 	</array>
 	<array>
 		<string>level7</string>
-		<string>0</string>
+		<string>220</string>
 		<string>8</string>
 		<string>8</string>
 	</array>

@@ -15,7 +15,7 @@
     IBOutlet   UILabel *time_left;
     IBOutlet   UILabel *scores_for_this_level;
     
-    int i,j,k,z;
+    int i,j,k,z,movesDone;
 }
 
 -(void) setMovesDone:(int)movesDone;
@@ -25,6 +25,7 @@
 -(void) startExtraScoresAnim;
 
 - (IBAction)nextLevelTapped:(id)sender;
+
 
 
 @end

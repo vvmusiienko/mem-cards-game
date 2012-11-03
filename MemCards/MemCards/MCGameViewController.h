@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "MCCard.h"
 #import "MCAppDelegate.h"
+#import "MCLevelEndViewController.h"
+
 @interface MCGameViewController : UIViewController <MCCardDelegate>{
     IBOutlet UILabel *myTimer;
     IBOutlet UILabel *myScore;
-    
     int i,j,f;
-    
+    int clicksCount;
     NSArray *plistWithLevels;
     NSArray *currentLevelSettings;
     //objects needed for gameLogic---------------------------------------------------
