@@ -12,6 +12,7 @@
 #import <MessageUI/MessageUI.h>
 #import "MCSoundSystem.h"
 #import "MCAppDelegate.h"
+#import <Twitter/Twitter.h>
 
 @interface MCMainViewController : UIViewController
 {
@@ -29,5 +30,7 @@
 -(IBAction)playButton:(id)sender;
 
 -(IBAction)showLeader;
+
+-(IBAction)tweetit:(id)sender;
 
 @end

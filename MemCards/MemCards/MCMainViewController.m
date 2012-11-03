@@ -76,4 +76,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(IBAction)tweetit:(id)sender{
+    TWTweetComposeViewController *twitter = [[TWTweetComposeViewController alloc]init];
+    [twitter setInitialText:@"my hight score = "];
+    [self presentViewController:twitter animated:YES completion:nil];
+    
+    twitter.completionHandler = ^(TWTweetComposeViewControllerResult res){
+        
+        if(res == TWTweetComposeViewControllerResultDone){
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"The tweet was posted succesful" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+            
+            [alert show];
+        }
+        else if (res == TWTweetComposeViewControllerResultCancelled){
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"canceled" message:@"You canceled posting the Tweet" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+            
+            [alert show];
+        }
+        [self dismissModalViewControllerAnimated:YES];
+    };
+}
 @end
