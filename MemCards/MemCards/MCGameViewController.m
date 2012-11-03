@@ -50,33 +50,37 @@
             [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1.0];
             card.delegate = self;
             imageCount++;
+            cardsMayBeClicked = YES;
+            imageCount++;
         }topSep=0;
         
     }
     
-
+    
 }
 
 //-------------------------------------------------------------------------------------
 -(void)cardClicked:(MCCard*) cardSelf {
     currentCard = cardSelf;
-    if ([currentCard getCardMayBeClicked] == YES) {
+    if (cardsMayBeClicked == YES) {
         if ([currentCard getCardIsFleppedUp]==NO && lastSelCard==nil){
             [currentCard CardFlipUp];
             lastSelCard = currentCard;
         } else if ([currentCard getCardIsFleppedUp]==NO && lastSelCard!=nil && [lastSelCard getIdForCard] != [currentCard getIdForCard]){
+            cardsMayBeClicked = NO;
             [currentCard CardFlipUp];
-            [currentCard setCardMayBeClicked:NO];
             [lastSelCard performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1];
             [currentCard performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1];
+            [self performSelector:@selector(cardsMayBeClickedIsEqualYes) withObject:nil afterDelay:1];
             lastSelCard=nil;
             currentCard=nil;
         } else if ([currentCard getCardIsFleppedUp]==NO && [lastSelCard getIdForCard] == [currentCard getIdForCard]){
-            [currentCard setCardMayBeClicked:NO];
+            cardsMayBeClicked = NO;
             [currentCard CardFlipUp];
             imageCount-=2;
             [currentCard performSelector:@selector(hideImage) withObject:nil afterDelay:1];
             [lastSelCard performSelector:@selector(hideImage) withObject:nil afterDelay:1];
+            [self performSelector:@selector(cardsMayBeClickedIsEqualYes) withObject:nil afterDelay:1];
             lastSelCard=nil;
             currentCard=nil;
             if (imageCount==0) {
@@ -86,7 +90,9 @@
         }
     }
 }
-
+-(void) cardsMayBeClickedIsEqualYes{
+    cardsMayBeClicked = YES;
+}
 
 //----------------------------------------------------------------------------------------------
 
