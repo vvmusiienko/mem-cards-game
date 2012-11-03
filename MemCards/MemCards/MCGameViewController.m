@@ -52,31 +52,32 @@
             }
             int left = row*cellwidth +leftSep+leftPadding+padding/2;
             int top =cell*cellhight+50+topSep+topPadding;
-            int x = [self getRandomNumber:320 to:400];
-            int y = [self getRandomNumber:460 to:500];
-             MCCard *card=[[MCCard alloc] initWithCardId:[testField cardIDForX:row andY:cell]];
+            
+            float firstPointX = 400*cos(f)+120;
+            float firstPointY = 400*sin(f)+230;
+            
+            MCCard *card=[[MCCard alloc] initWithCardId:[testField cardIDForX:row andY:cell]];
             
             [UIView beginAnimations:nil context:NULL];
             [UIView setAnimationDuration:3];
-            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
             [UIView setAnimationBeginsFromCurrentState:YES];
             CGAffineTransform transform = CGAffineTransformMakeRotation(-0.0f);
-            card.frame = CGRectMake(x,y, 0, 0);
+            
+            card.frame = CGRectMake(firstPointX,firstPointY, 0, 0);
             card.transform = CGAffineTransformMakeRotation(360.0f);
             [self.view addSubview:card];
+            
             card.transform =transform;
             card.frame = CGRectMake(left,top, cellwidth-padding, cellhight-padding);
-            [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:3.5];
+            f=f+360/(row*cell+1);
+            [UIView commitAnimations];
+            
+            [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:4];
             card.delegate = self;
             imageCount++;
-            f=f+360/16;
-            [UIView commitAnimations];
-        }
-        topSep=0;
-        
+        }topSep=0;
     }
-    
-    
 }
 
 //-------------------------------------------------------------------------------------
@@ -115,9 +116,6 @@
 }
 
 //----------------------------------------------------------------------------------------------
--(int)getRandomNumber:(int)from to: (int)to{
-    return to+arc4random()% ((from-to)+1);
-}
 
 - (IBAction)mainMenuTapped:(id)sender {
     //[self dismissModalViewControllerAnimated:YES];
