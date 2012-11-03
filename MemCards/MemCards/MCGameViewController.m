@@ -10,6 +10,12 @@
 #import "MCGameField.h"
 #import "MCCard.h"
 #import "MCLevelEndViewController.h"
+@interface MCGameViewController ()
+{
+    int fieldWidth;
+    int fieldHeight;
+}
+@end
 
 @implementation MCGameViewController
 
@@ -30,7 +36,9 @@
    
     int topSep=0;
     int leftSep=0;
-    for (int row=0;row<[testField getWidth];row++){     
+    f = 0;
+    
+    for (int row=0; row<[testField getWidth];row++){
         if (row%2==0 && row>0 && [testField getWidth]%2==0) {
             leftSep=leftSep+ sepWidth;
             
@@ -42,49 +50,33 @@
                 topSep= topSep+ sepWidth;
                 
             }
-            
-            
-            MCCard *card=[[MCCard alloc] initWithCardId:[testField cardIDForX:row andY:cell]];
-            
-            [UIView beginAnimations:nil context:NULL];
-            [UIView setAnimationDuration:2];
-            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-           //[UIView setAnimationBeginsFromCurrentState:YES];
-            for (f = 0; f<360; f=f+360/6) {
-            float x = 200*cos(f)+160;
-            float y = 200*sin(f)+230;
-            card.frame = CGRectMake(x,y, cellwidth-padding, cellhight-padding);
-            }
-            [self.view addSubview:card];
             int left = row*cellwidth +leftSep+leftPadding+padding/2;
             int top =cell*cellhight+50+topSep+topPadding;
-            CGAffineTransform transform = CGAffineTransformMakeTranslation(0,0);
+            int x = [self getRandomNumber:320 to:400];
+            int y = [self getRandomNumber:460 to:500];
+             MCCard *card=[[MCCard alloc] initWithCardId:[testField cardIDForX:row andY:cell]];
+            
+            [UIView beginAnimations:nil context:NULL];
+            [UIView setAnimationDuration:3];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            [UIView setAnimationBeginsFromCurrentState:YES];
+            CGAffineTransform transform = CGAffineTransformMakeRotation(-0.0f);
+            card.frame = CGRectMake(x,y, 0, 0);
+            card.transform = CGAffineTransformMakeRotation(360.0f);
+            [self.view addSubview:card];
             card.transform =transform;
-            [UIView commitAnimations];
-           
+            card.frame = CGRectMake(left,top, cellwidth-padding, cellhight-padding);
             [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:3.5];
             card.delegate = self;
             imageCount++;
-        }topSep=0;
+            f=f+360/16;
+            [UIView commitAnimations];
+        }
+        topSep=0;
         
     }
-    /*- (void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration
-     curve:(int)curve x:(CGFloat)x y:(CGFloat)y
-     {
-     
-     [UIView beginAnimations:nil context:NULL];
-     [UIView setAnimationDuration:duration];
-     [UIView setAnimationCurve:curve];
-     [UIView setAnimationBeginsFromCurrentState:YES];
-     
-     CGAffineTransform transform = CGAffineTransformMakeTranslation(x, y);
-     image.transform = transform;
-     
-     [UIView commitAnimations];
-     
-     }
- */
-
+    
+    
 }
 
 //-------------------------------------------------------------------------------------
@@ -124,7 +116,9 @@
 
 
 //----------------------------------------------------------------------------------------------
-
+-(int)getRandomNumber:(int)from to: (int)to{
+    return to+arc4random()% ((from-to)+1);
+}
 
 - (IBAction)mainMenuTapped:(id)sender {
     //[self dismissModalViewControllerAnimated:YES];

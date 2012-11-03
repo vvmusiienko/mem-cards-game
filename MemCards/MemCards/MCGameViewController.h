@@ -27,6 +27,7 @@
 -(IBAction)mainMenuTapped:(id)sender;
 -(void)showActivity;
 -(void)generateFieldWithCards;
+-(int)getRandomNumber:(int)from to: (int)to;
 
 //objects needed for gameLogic---------------------------------------------------
 -(void)cardClicked:(MCCard*) cardSelf;
