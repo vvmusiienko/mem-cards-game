@@ -13,8 +13,8 @@
 	UIButton * photoLibrary;
 	UIButton * standardIcons;
     UIView *mainViev;
-    UIView *iconView;
     NSString *icon_name;
+    IBOutlet UIScrollView *mscrollview;
   
 }
 
@@ -22,12 +22,12 @@
 @property (nonatomic, retain) IBOutlet UIButton * photoLibrary;
 @property (nonatomic, retain) IBOutlet UIButton * standardIcons;
 @property (nonatomic, retain) IBOutlet  UIView *mainViev;
-@property (nonatomic, retain) IBOutlet  UIView *iconViev;
+@property(nonatomic, retain)IBOutlet UIScrollView *mscrollview;
 
 -(IBAction) getFromPhotoLibrary :(id) sender;
 -(IBAction) getStandartIcons:(id) sender;
 -(IBAction) goBack:(id) sender;
-- (IBAction)iconClicked:(id)sender ;
+-(IBAction)iconClicked:(id)sender ;
 
 @end
 

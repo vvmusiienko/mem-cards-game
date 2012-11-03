@@ -119,7 +119,7 @@
     NSString *defaultPath = [[NSBundle mainBundle] pathForResource:@"Levels.plist" ofType:nil];
     plistWithLevels= [NSArray arrayWithContentsOfFile:defaultPath];
     NSLog(@"%@",plistWithLevels );
-    currentLevelSettings=[plistWithLevels objectAtIndex:5];
+    currentLevelSettings=[plistWithLevels objectAtIndex:0];
     imageCount=0;
     i=0;j=0;
     
