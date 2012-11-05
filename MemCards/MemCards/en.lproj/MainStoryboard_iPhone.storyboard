@@ -250,6 +250,21 @@
                                     <segue destination="2" kind="modal" id="ik8-G2-wFg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xaw-JN-dUo">
+                                <rect key="frame" x="195" y="438" width="95" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="GameEnd">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="LHv-vD-I95" kind="modal" id="0U3-p6-7r0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.56470590829849243" green="0.46274513006210327" blue="1" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -337,6 +352,41 @@
             <point key="canvasLocation" x="1175" y="-52"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="MCGameEndViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCGameEndViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="allscores" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeSpent" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MCGameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCGameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="mainMenuTapped:"/>
+                <relationship kind="outlet" name="myScore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="myTimer" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MCLevelEndViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCLevelEndViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="nextLevelTapped:"/>
+                <relationship kind="outlet" name="moves_done" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scores_for_this_level" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="time_left" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="time_spend_for_level" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MCMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCMainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="email:"/>
+                <relationship kind="action" name="playButton:"/>
+                <relationship kind="outlet" name="highScore" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -345,5 +395,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="WO6-SZ-81h"/>
         <segue reference="ik8-G2-wFg"/>
+        <segue reference="Jog-Vg-xNY"/>
     </inferredMetricsTieBreakers>
 </document>
