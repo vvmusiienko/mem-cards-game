@@ -66,6 +66,7 @@
 
 - (void)viewDidLoad
 {
+    [self loadHighscore];
     [super viewDidLoad];
   
 	// Do any additional setup after loading the view.
@@ -97,4 +98,19 @@
         [self dismissModalViewControllerAnimated:YES];
     };
 }
+
+
+//===================Highscore=============
+-(void)loadHighscore
+{    if([[NSUserDefaults standardUserDefaults]  valueForKey:@"gameHighscore"]==NULL  )
+{
+    highScore.text = @"Waiting some result";
+    [[NSUserDefaults standardUserDefaults] setValue: @"Waiting some result" forKey:@"gameHighscore"];
+}
+    
+else {
+    highScore.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"gameHighscore"];
+}
+}
+
 @end

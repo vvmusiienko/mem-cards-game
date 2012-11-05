@@ -23,9 +23,27 @@
 { 
     [super viewDidLoad];
     [timeSpent setText :@"Waiting result"];
-    [allscores setText:@"Waiting result"];
+    [allscores setText:@"0"];
+    [self saveHighscore];
   
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)saveHighscore{
+    
+    
+    NSString *lastScore = allscores.text;
+    //  NSString *gameHighscore = [[NSUserDefaults standardUserDefaults] valueForKey:@"gameHighscore"];
+    
+    
+    
+    //  if (([lastScore intValue]>[gameHighscore intValue]) || (gameHighscore==@"Waiting some result"))
+    //   {
+    [[NSUserDefaults standardUserDefaults] setValue: lastScore forKey:@"gameHighscore"];
+    //  }
+    
+    
+    
 }
 
 @end
