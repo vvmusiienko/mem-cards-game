@@ -14,31 +14,26 @@
 @interface MCGameViewController : UIViewController <MCCardDelegate>{
     IBOutlet UILabel *myTimer;
     IBOutlet UILabel *myScore;
-
-    
     int i,j,f;
-
-    int clicksCount;
- 
-   
-
-    
+    int clicksCount;  
     NSArray *plistWithLevels;
     NSArray *currentLevelSettings;
     //objects needed for gameLogic---------------------------------------------------
     MCCard *lastSelCard;
     MCCard *currentCard;
     int imageCount;
-    //objects needed for gameLogic---------------------------------------------------
-    
+    BOOL cardsMayBeClicked;
+   
 }
 -(IBAction)mainMenuTapped:(id)sender;
 -(void)showActivity;
 -(void)generateFieldWithCards;
-
-//objects needed for gameLogic---------------------------------------------------
+//objects needed for gameLogic--------------------------------------------------
 -(void)cardClicked:(MCCard*) cardSelf;
-//objects needed for gameLogic---------------------------------------------------
+
+-(void) AnimationForCard:(int)row Row:(int)cell Cell:(MCCard*) card;
+-(void) cardsMayBeClickedIsEqualYes;
+ 
 
 @end
 

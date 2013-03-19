@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -10,7 +10,7 @@
             <objects>
                 <viewController id="2" customClass="MCMainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hOW-bj-eM8">
@@ -102,10 +102,9 @@
         <!--Image Picker View Controller-->
         <scene sceneID="0ZB-IZ-dh3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vdf-KA-BFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="OrP-iw-vBP" customClass="MCImagePickerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KoC-At-uJP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="KF2-fo-fMX" userLabel="mainView">
@@ -220,6 +219,7 @@
                         <outlet property="mscrollview" destination="d2W-WL-QAn" id="Uhx-H8-D3T"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vdf-KA-BFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="150" y="52"/>
         </scene>
@@ -345,7 +345,7 @@
             <objects>
                 <viewController id="LdV-9B-WTu" customClass="MCGameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Q1-ky-gmQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DXT-Tz-BF0">
@@ -486,6 +486,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="WO6-SZ-81h"/>
-        <segue reference="ik8-G2-wFg"/>
+        <segue reference="BOr-e2-pam"/>
     </inferredMetricsTieBreakers>
 </document>

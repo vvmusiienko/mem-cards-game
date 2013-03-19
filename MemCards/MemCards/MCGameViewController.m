@@ -43,7 +43,7 @@
     {
         cellwidth= (750-separateX)/[testField getWidth];
         cellhight= (900-separateY)/[testField getHeight];
-        leftPadding=((750 -separateX)- cellwidth*[testField getWidth])/2;
+        leftPadding=((750 -separateX)- cellwidth*[testField getWidth])/2+10;
         topPadding=((900 -separateY)- cellhight*[testField getHeight])/2;     
     }
     
@@ -90,6 +90,7 @@
             
             [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:4];
             card.delegate = self;
+            cardsMayBeClicked = YES;
             imageCount++;
         }topSep=0;
     }
@@ -105,23 +106,25 @@
     myScore.text=[NSString stringWithFormat:@"%d",j];
    
     
-    if ([currentCard getCardMayBeClicked] == YES) {
+    if (cardsMayBeClicked == YES) {
         if ([currentCard getCardIsFleppedUp]==NO && lastSelCard==nil){
             [currentCard CardFlipUp];
             lastSelCard = currentCard;
         } else if ([currentCard getCardIsFleppedUp]==NO && lastSelCard!=nil && [lastSelCard getIdForCard] != [currentCard getIdForCard]){
             [currentCard CardFlipUp];
-            [currentCard setCardMayBeClicked:NO];
+             cardsMayBeClicked = NO;
             [lastSelCard performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1];
             [currentCard performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1];
+            [self performSelector:@selector(cardsMayBeClickedIsEqualYes) withObject:nil afterDelay:1];
             lastSelCard=nil;
             currentCard=nil;
         } else if ([currentCard getCardIsFleppedUp]==NO && [lastSelCard getIdForCard] == [currentCard getIdForCard]){
-            [currentCard setCardMayBeClicked:NO];
+             cardsMayBeClicked = NO;
             [currentCard CardFlipUp];
             imageCount-=2;
             [currentCard performSelector:@selector(hideImage) withObject:nil afterDelay:1];
             [lastSelCard performSelector:@selector(hideImage) withObject:nil afterDelay:1];
+            [self performSelector:@selector(cardsMayBeClickedIsEqualYes) withObject:nil afterDelay:1];
             lastSelCard=nil;
             currentCard=nil;
             if (imageCount==0) {
@@ -131,18 +134,29 @@
                 
                    if (levelId<6 ) {
                                                 //go to LevelEndView
-                        [self performSegueWithIdentifier:@"timer" sender:self];
+                       [self performSelector:@selector(levelEndView) withObject:nil afterDelay:2];
+                       
                         
                    
                 }   else
                 
-                    [self performSegueWithIdentifier:@"GameEnd" sender:self];
+                    [self performSelector:@selector(gameEndView) withObject:nil afterDelay:2];
+                
                 
             }
         }
     }
 }
 
+-(void) cardsMayBeClickedIsEqualYes{
+    cardsMayBeClicked = YES;
+}
+-(void) levelEndView{
+     [self performSegueWithIdentifier:@"timer" sender:self];
+}
+-(void) gameEndView{
+    [self performSegueWithIdentifier:@"GameEnd" sender:self];
+}
 
 //----------------------------------------------------------------------------------------------
 
