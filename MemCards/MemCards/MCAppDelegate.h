@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+
 UIImage *imageShirt;
 NSString * documentsDirectoryPath;
+
+int levelId;
+ int allScores,allTime,bonusScores;
+
 @interface MCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

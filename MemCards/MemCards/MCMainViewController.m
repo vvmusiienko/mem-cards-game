@@ -19,7 +19,10 @@
 -(IBAction)playButton:(id)sender{
     
     [highScore setText:@"0"];
-
+    levelId=0;
+    allScores=0;
+    allTime=0;
+    
 }
 
 -(IBAction)showLeader{

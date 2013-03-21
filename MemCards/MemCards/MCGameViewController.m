@@ -9,7 +9,8 @@
 #import "MCGameViewController.h"
 #import "MCGameField.h"
 #import "MCCard.h"
-
+#import "MCLevelEndViewController.h"
+#import "MCGameEndViewController.h"
 @implementation MCGameViewController
 
 -(void)generateFieldWithCards{
@@ -75,7 +76,14 @@
 
 //-------------------------------------------------------------------------------------
 -(void)cardClicked:(MCCard*) cardSelf {
+    
     currentCard = cardSelf;
+    clicksCount++;
+    j = [myScore.text intValue];
+    j -=100;
+    myScore.text=[NSString stringWithFormat:@"%d",j];
+   
+    
     if ([currentCard getCardMayBeClicked] == YES) {
         if ([currentCard getCardIsFleppedUp]==NO && lastSelCard==nil){
             [currentCard CardFlipUp];
@@ -96,7 +104,18 @@
             lastSelCard=nil;
             currentCard=nil;
             if (imageCount==0) {
-                //go to LevelEndView
+                allScores=allScores+bonusScores+[myScore.text intValue];
+                allTime=allTime+[[currentLevelSettings objectAtIndex:1] intValue]-[myTimer.text intValue];
+
+                
+                   if (levelId<6 ) {
+                                                //go to LevelEndView
+                        [self performSegueWithIdentifier:@"timer" sender:self];
+                        
+                   
+                }   else
+                
+                    [self performSegueWithIdentifier:@"GameEnd" sender:self];
                 
             }
         }
@@ -108,17 +127,41 @@
 
 
 - (IBAction)mainMenuTapped:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    //[self dismissModalViewControllerAnimated:YES];
+   // levelId=0;
 }
 
--(void)showActivity{
-    i = [myTimer.text intValue];
-    j = [myScore.text intValue];
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"timer"]) {
+        MCLevelEndViewController* c = (MCLevelEndViewController*)segue.destinationViewController;
+                        c.view;
     
-    int newTime = i + 1;
+    [c setMovesDone:clicksCount];
+    [c setTimeSpend:[[currentLevelSettings objectAtIndex:1] intValue]-[myTimer.text intValue]];
+    [c setTimeForLevel:[myTimer.text intValue]];
+    [c setScores:[myScore.text intValue]];
+    }
+    if ([segue.identifier isEqualToString:@"GameEnd"]) {
+        MCGameEndViewController* e = (MCGameEndViewController*)segue.destinationViewController;
+        e.view;
+        [e setallscores:allScores];
+        [e setalltime:allTime];
+        
+    }
+}
+
+
+-(void)showActivity{
+    
+    i = [myTimer.text intValue];
+    int newTime = i - 1;
+    if (newTime <=0) {
+        [self performSegueWithIdentifier:@"GameEnd" sender:self];
+        
+    }
 	
     myTimer.text = [NSString stringWithFormat:@"%d", newTime];
-    myScore.text=[NSString stringWithFormat:@"%d",j];
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -135,15 +178,20 @@
     NSString *defaultPath = [[NSBundle mainBundle] pathForResource:@"Levels.plist" ofType:nil];
     plistWithLevels= [NSArray arrayWithContentsOfFile:defaultPath];
     NSLog(@"%@",plistWithLevels );
-    currentLevelSettings=[plistWithLevels objectAtIndex:0];
+
+    currentLevelSettings=[plistWithLevels objectAtIndex:levelId];
+
     imageCount=0;
-    i=0;j=0;
+    clicksCount=0;
+    j=[[currentLevelSettings objectAtIndex:2] intValue] * [[currentLevelSettings objectAtIndex:3]intValue]*300;
+    myScore.text = [NSString stringWithFormat:@"%d", j];
+    myTimer.text = [currentLevelSettings objectAtIndex:1];
     
     [super viewDidLoad];
     [self generateFieldWithCards];
 
 	[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showActivity) userInfo: nil repeats:YES];
-    
+   
     /*--------------------------------------------------------------------------------------*/
  }
 

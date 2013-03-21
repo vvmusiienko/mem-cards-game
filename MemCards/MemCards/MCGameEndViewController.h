@@ -10,12 +10,16 @@
 
 @interface MCGameEndViewController : UIViewController{
   
-     UILabel *timeSpent;
-     UILabel *allScores;
+   
+ 
+    IBOutlet UILabel *all_time;
+    IBOutlet UILabel *all_scores;
+ 
 }
 
-@property(nonatomic,retain) IBOutlet UILabel *timeSpent;
-@property(nonatomic,retain) IBOutlet UILabel *allscores;
 
 
+-(void)setalltime:(int)alltime;
+
+-(void)setallscores:(int)allscores;
 @end
