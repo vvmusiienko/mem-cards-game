@@ -16,7 +16,7 @@
     
     MCGameField *testField=[[MCGameField alloc] init];
     [testField setwidth:[[currentLevelSettings objectAtIndex:2] intValue] AndHeight:[[currentLevelSettings objectAtIndex:3] intValue]];
-    [testField generateRandomField]; 
+    [testField generateRandomField];
     
     int sepWidth=10;
     int padding=4;
@@ -26,35 +26,51 @@
     int cellhight= (350-separateY)/[testField getHeight];
     int leftPadding=((320 -separateX)- cellwidth*[testField getWidth])/2;
     int topPadding=((350 -separateY)- cellhight*[testField getHeight])/2;
-   
+    
     int topSep=0;
     int leftSep=0;
-    for (int row=0;row<[testField getWidth];row++){     
+    f = 0;
+    
+    for (int row=0; row<[testField getWidth];row++){
         if (row%2==0 && row>0 && [testField getWidth]%2==0) {
             leftSep=leftSep+ sepWidth;
             
         }
-        for (int cell=0;cell<[testField getHeight];cell++){          
+        for (int cell=0;cell<[testField getHeight];cell++){
             
             
             if (cell%2==0 && cell>0 && [testField getHeight]%2==0) {
                 topSep= topSep+ sepWidth;
                 
             }
-            int left = row*cellwidth +leftSep+leftPadding+padding/2;            
-            int top =cell*cellhight+50+topSep+topPadding;  
+            int left = row*cellwidth +leftSep+leftPadding+padding/2;
+            int top =cell*cellhight+50+topSep+topPadding;
+            
+            float firstPointX = 400*cos(f)+120;
+            float firstPointY = 400*sin(f)+230;
             
             MCCard *card=[[MCCard alloc] initWithCardId:[testField cardIDForX:row andY:cell]];
-            card.frame=CGRectMake(left, top, cellwidth-padding, cellhight-padding);
+            
+            [UIView beginAnimations:nil context:NULL];
+            [UIView setAnimationDuration:3];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+            [UIView setAnimationBeginsFromCurrentState:YES];
+            CGAffineTransform transform = CGAffineTransformMakeRotation(-0.0f);
+            
+            card.frame = CGRectMake(firstPointX,firstPointY, 0, 0);
+            card.transform = CGAffineTransformMakeRotation(360.0f);
             [self.view addSubview:card];
-            [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:1.0];
+            
+            card.transform =transform;
+            card.frame = CGRectMake(left,top, cellwidth-padding, cellhight-padding);
+            f=f+360/(row*cell+1);
+            [UIView commitAnimations];
+            
+            [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:4];
             card.delegate = self;
             imageCount++;
         }topSep=0;
-        
     }
-    
-
 }
 
 //-------------------------------------------------------------------------------------
