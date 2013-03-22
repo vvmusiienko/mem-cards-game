@@ -9,6 +9,7 @@
 #import "MCCard.h"
 #import "MCAppDelegate.h"
 #include <QuartzCore/QuartzCore.h>
+#import <QuartzCore/CoreAnimation.h>    
 
 @implementation MCCard
 @synthesize delegate;
@@ -85,6 +86,25 @@
     ourLayer.cornerRadius = 8.0f;               
     ourLayer.masksToBounds = YES;               
     ourLayer.borderWidth = 0.0f;            
+}
+-(void)shake
+{
+    CGFloat t = 5.0;
+    CGAffineTransform translateRight  = CGAffineTransformTranslate(CGAffineTransformIdentity, t, t);
+    CGAffineTransform translateLeft = CGAffineTransformTranslate(CGAffineTransformIdentity, --t, -t);
+    
+    self.transform = translateLeft;
+    
+    [UIView animateWithDuration:0.07 delay:0.0 options:UIViewAnimationOptionAutoreverse|UIViewAnimationOptionRepeat animations:^{
+        [UIView setAnimationRepeatCount:10.0];
+        self.transform = translateRight;
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [UIView animateWithDuration:0.05 delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                self.transform = CGAffineTransformIdentity;
+            } completion:NULL];
+        }
+    }];
 }
 /*
  //debuger function

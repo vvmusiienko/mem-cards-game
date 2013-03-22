@@ -62,11 +62,15 @@ for(int icon_count=1;icon_count<9;icon_count++){
 }
 
 -(IBAction) getFromPhotoLibrary:(id) sender {
-    
+   
     UIImagePickerController * picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;    
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary ;    
 	[self presentModalViewController:picker animated:YES];
+    
+    
+    
+
     
 }
 

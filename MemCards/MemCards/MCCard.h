@@ -36,6 +36,7 @@
 -(BOOL) getCardMayBeClicked;
 -(BOOL) getCardIsFleppedUp;
 -(void) setCardMayBeClicked: (BOOL) changePermission;
+-(void)shake;
 @property(nonatomic)id delegate;
 @property(readonly) BOOL cardIsFlippedUp;
 @property(readonly) BOOL cardMayBeClicked;

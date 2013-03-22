@@ -87,8 +87,10 @@
             card.frame = CGRectMake(left,top, cellwidth-padding, cellhight-padding);
             f=f+360/(row*cell+1);
             [UIView commitAnimations];
-            
+           
             [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:4];
+            [card performSelector:@selector(shake) withObject:nil afterDelay:2];
+             
             card.delegate = self;
             cardsMayBeClicked = YES;
             imageCount++;

@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "MCAppDelegate.h"
+#import <MessageUI/MessageUI.h>
 @interface MCImagePickerViewController : UIViewController <UINavigationControllerDelegate> {
 	UIImageView * imageView;
 	UIButton * photoLibrary;
 	UIButton * standardIcons;
     UIView *mainViev;
     NSString *icon_name;
+    UIPopoverController *popover;
     IBOutlet UIScrollView *mscrollview;
   
 }
