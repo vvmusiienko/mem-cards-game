@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		104B83BE16FC7F81003098C7 /* popoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 104B83BD16FC7F81003098C7 /* popoverController.m */; };
 		56AE4C3C1615DA30000FBF5A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AE4C3B1615DA30000FBF5A /* UIKit.framework */; };
 		56AE4C3E1615DA30000FBF5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AE4C3D1615DA30000FBF5A /* Foundation.framework */; };
 		56AE4C401615DA30000FBF5A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AE4C3F1615DA30000FBF5A /* CoreGraphics.framework */; };
@@ -63,8 +62,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		104B83BC16FC7F81003098C7 /* popoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = popoverController.h; sourceTree = "<group>"; };
-		104B83BD16FC7F81003098C7 /* popoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = popoverController.m; sourceTree = "<group>"; };
 		56AE4C371615DA30000FBF5A /* MemCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56AE4C3B1615DA30000FBF5A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		56AE4C3D1615DA30000FBF5A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -220,8 +217,6 @@
 				56AE4C541615DA30000FBF5A /* MCViewController.m */,
 				AC38EC541636E4C40026EFB8 /* Levels.plist */,
 				F72DBEBF164066160008A23D /* MCImagePickerViewController.h */,
-				104B83BC16FC7F81003098C7 /* popoverController.h */,
-				104B83BD16FC7F81003098C7 /* popoverController.m */,
 				F72DBEC0164066160008A23D /* MCImagePickerViewController.m */,
 			);
 			name = Controllers;
@@ -386,7 +381,6 @@
 				CF206C45162F2CEB00844DC8 /* MCGameEndViewController.m in Sources */,
 				DCAB6FBF1630804400EED2F9 /* MCLevelEndViewController.m in Sources */,
 				F72DBEC1164066160008A23D /* MCImagePickerViewController.m in Sources */,
-				104B83BE16FC7F81003098C7 /* popoverController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

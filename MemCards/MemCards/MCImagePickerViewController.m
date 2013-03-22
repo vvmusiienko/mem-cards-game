@@ -12,6 +12,7 @@
 #include <QuartzCore/QuartzCore.h>
 
 #import "MCMainViewController.h"
+int count = 0;
 @interface MCImagePickerViewController ()
 
 @end
@@ -26,6 +27,8 @@
     [mscrollview setHidden:NO];
     [mainViev setHidden:NO];
     
+    if(count == 0){
+        count++ ;
     
 for(int icon_count=1;icon_count<9;icon_count++){
         NSString *img_name  = [[NSString alloc] initWithFormat:@"icon%d", icon_count];            
@@ -49,27 +52,35 @@ for(int icon_count=1;icon_count<9;icon_count++){
         // mscrollview.frame = CGRectMake(0, 0,780 , 1100);
          // code for landscape orientation
    
-         mscrollview.frame = CGRectMake(0, 0,self.view.frame.size.width , self.view.frame.size.height);
+     mscrollview.frame =mainViev.frame;
+    
+     // CGRectMake(0, 0,self.view.frame.size.width , self.view.frame.size.height);
      
         // mscrollview.frame = self.view.frame;
          mscrollview.contentSize = CGSizeMake(768,2600);
          // code for Portrait orientation
     
     
- }else{
-     mscrollview.frame = CGRectMake(0, 0, 320, 460);
+ }
+      if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)  {
+     mscrollview.frame =mainViev.frame;
      mscrollview.contentSize = CGSizeMake(320,2500);
 
  
  }
+    }
 /*
-    
+}
   // MCMainViewController* picker = [[MCMainViewController alloc] initWith];
      MCMainViewController *picker= [self.storyboard instantiateViewControllerWithIdentifier:@"main"];    
     
       [self presentModalViewController:picker animated:YES];
-  */
-   }
+ */CGRect fullScreenRect ;
+    UIScreen *screen = [UIScreen mainScreen];
+    fullScreenRect = screen.bounds;
+        NSLog(@"blaaljdakljfkj%f  :%f",mscrollview.frame.size.width, self.mainViev.frame.size.width);
+        
+}
 
 - (IBAction) iconClicked:(id)sender {
     
@@ -148,10 +159,18 @@ for(int icon_count=1;icon_count<9;icon_count++){
     [mainViev setHidden:NO];
     [mscrollview setHidden:YES];
     imageView.image= imageShirt;
+     mscrollview.frame =mainViev.frame;
+    
+    
     
 	// Do any additional setup after loading the view.
 }
+- (void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)orientation duration:(NSTimeInterval)duration {
+ mscrollview.frame =mainViev.frame;
+  
 
+    
+}
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
