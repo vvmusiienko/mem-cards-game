@@ -14,6 +14,7 @@
 @interface MCGameViewController : UIViewController <MCCardDelegate>{
     IBOutlet UILabel *myTimer;
     IBOutlet UILabel *myScore;
+    IBOutlet UIView *subView;
     int i,j,f;
     int clicksCount;  
     NSArray *plistWithLevels;
@@ -33,7 +34,7 @@
 
 -(void) AnimationForCard:(int)row Row:(int)cell Cell:(MCCard*) card;
 -(void) cardsMayBeClickedIsEqualYes;
- 
+@property (nonatomic, retain) IBOutlet  UIView *subView;
 
 @end
 

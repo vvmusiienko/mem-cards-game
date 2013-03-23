@@ -15,13 +15,22 @@
 @end
 
 @implementation MCMainViewController
-@synthesize highScore;
+@synthesize highScore, shareWith;
 -(IBAction)playButton:(id)sender{
     
     [highScore setText:@"0"];
     levelId=0;
     allScores=0;
     allTime=0;
+        
+}
+
+- (void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)orientation duration:(NSTimeInterval)duration {
+    // mscrollview.frame =mainViev.frame;
+   detOrientation = self.shareWith.frame.size.width;
+    NSLog(@"blaaljdakljfkj%f",self.shareWith.frame.size.width);
+  //  NSLog(@"size of tab is %@",NSStringFromCGSize(subView.bounds.size));
+    
     
 }
 
@@ -69,7 +78,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  
+    detOrientation = self.shareWith.frame.size.width;
+
+   NSLog(@"blaaljdakljfkj%f",detOrientation);
 	// Do any additional setup after loading the view.
 }
 

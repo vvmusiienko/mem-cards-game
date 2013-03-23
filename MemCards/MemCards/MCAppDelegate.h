@@ -10,7 +10,7 @@
 
 UIImage *imageShirt;
 NSString * documentsDirectoryPath;
-
+float detOrientation;
 int levelId;
  int allScores,allTime,bonusScores;
 

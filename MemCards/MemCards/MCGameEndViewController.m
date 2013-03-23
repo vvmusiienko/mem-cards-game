@@ -15,7 +15,10 @@
 @implementation MCGameEndViewController
 
 
-
+- (BOOL) shouldAutorotate
+{
+    return NO;
+}
 
 - (void)viewDidLoad
 

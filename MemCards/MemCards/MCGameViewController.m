@@ -12,7 +12,7 @@
 #import "MCLevelEndViewController.h"
 #import "MCGameEndViewController.h"
 @implementation MCGameViewController
-
+@synthesize subView;
 -(void)generateFieldWithCards{
     
     MCGameField *testField=[[MCGameField alloc] init];
@@ -31,20 +31,41 @@
     int cellhight;
     int leftPadding;
     int topPadding;
-    
+    int rowCount;
+    int cellCount;
     if([deviceType isEqualToString:@"iPhone Simulator"])
     {
         cellwidth= (320-separateX)/[testField getWidth];
         cellhight= (350-separateY)/[testField getHeight];
         leftPadding=((320 -separateX)- cellwidth*[testField getWidth])/2;
         topPadding=((350 -separateY)- cellhight*[testField getHeight])/2;
+        
     }
     if([deviceType isEqualToString:@"iPad Simulator"])
     {
-        cellwidth= (750-separateX)/[testField getWidth];
-        cellhight= (900-separateY)/[testField getHeight];
-        leftPadding=((750 -separateX)- cellwidth*[testField getWidth])/2+10;
-        topPadding=((900 -separateY)- cellhight*[testField getHeight])/2;     
+        NSLog(@"size of tab is %@",NSStringFromCGSize(subView.bounds.size));
+         NSLog(@"size of tab is %f",detOrientation);
+        
+        
+       if (detOrientation == 768) {
+                 
+            cellwidth= (750-separateX)/[testField getWidth];
+            cellhight= (900-separateY)/[testField getHeight];
+            leftPadding=((750 -separateX)- cellwidth*[testField getWidth])/2+10;
+            topPadding=((900 -separateY)- cellhight*[testField getHeight])/2;
+            rowCount=[testField getWidth];
+            cellCount=[testField getHeight];
+        }
+        if (detOrientation == 748) {
+            int separateX=([testField getHeight]/2-1)*sepWidth;
+            int separateY=([testField getWidth]/2-1)*sepWidth;
+            cellwidth= (1000-separateX)/[testField getHeight];
+            cellhight= (644-separateY)/[testField getWidth];
+            leftPadding=((1000 -separateX)- cellwidth*[testField getHeight])/2+10;
+            topPadding=((644 -separateY)- cellhight*[testField getWidth])/2;
+            rowCount=[testField getHeight];
+            cellCount=[testField getWidth];
+        }
     }
     
 
@@ -53,16 +74,16 @@
     int leftSep=0;
     f = 0;
     
-    for (int row=0; row<[testField getWidth];row++){
-        if (row%2==0 && row>0 && [testField getWidth]%2==0) {
+    for (int row=0; row<rowCount;row++){
+        if (row%2==0 && row>0 && rowCount%2==0) {
             leftSep=leftSep+ sepWidth;
             
         }
-        for (int cell=0;cell<[testField getHeight];cell++){
+        for (int cell=0;cell<cellCount;cell++){
             
             
-            if (cell%2==0 && cell>0 && [testField getHeight]%2==0) {
-                topSep= topSep+ sepWidth;
+            if (cell%2==0 && cell>0 && cellCount%2==0) {
+                topSep= topSep +sepWidth;
                 
             }
             int left = row*cellwidth +leftSep+leftPadding+padding/2;
@@ -71,8 +92,13 @@
             float firstPointX = 400*cos(f)+120;
             float firstPointY = 400*sin(f)+230;
             
-            MCCard *card=[[MCCard alloc] initWithCardId:[testField cardIDForX:row andY:cell]];
-            
+            MCCard *card;
+            if (detOrientation == 748) {
+                     card=[[MCCard alloc] initWithCardId:[testField cardIDForX:cell andY:row]];
+            }
+            if (detOrientation == 768) {
+                card=[[MCCard alloc] initWithCardId:[testField cardIDForX:row andY:cell]];
+            }
             [UIView beginAnimations:nil context:NULL];
             [UIView setAnimationDuration:3];
             [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
@@ -87,15 +113,17 @@
             card.frame = CGRectMake(left,top, cellwidth-padding, cellhight-padding);
             f=f+360/(row*cell+1);
             [UIView commitAnimations];
-           
+            card.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin;
+
             [card performSelector:@selector(CardFlipDown) withObject:nil afterDelay:4];
             [card performSelector:@selector(shake) withObject:nil afterDelay:2];
              
             card.delegate = self;
             cardsMayBeClicked = YES;
             imageCount++;
+            
         }topSep=0;
-    }
+        }
 }
 
 //-------------------------------------------------------------------------------------
@@ -231,6 +259,20 @@
    
     /*--------------------------------------------------------------------------------------*/
  }
+
+
+- (void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)orientation duration:(NSTimeInterval)duration {
+   // mscrollview.frame =mainViev.frame;
+    float  x= subView.bounds.size.width;
+    NSLog(@"blaaljdakljfkj%f  :%f",x, subView.frame.size.height);
+    NSLog(@"size of tab is %@",NSStringFromCGSize(subView.bounds.size));
+    
+    
+}
+- (BOOL) shouldAutorotate
+{
+    return NO;
+}
 
 - (void)didReceiveMemoryWarning
 {

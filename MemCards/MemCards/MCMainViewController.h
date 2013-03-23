@@ -16,9 +16,11 @@
 @interface MCMainViewController : UIViewController
 {
     UILabel *highScore;
+    UIView *shareWith;
 }
 
 @property (nonatomic,retain) IBOutlet UILabel *highScore;
+@property (nonatomic,retain) IBOutlet UIView *shareWith;
 @end
 
 @interface ViewController : UIViewController

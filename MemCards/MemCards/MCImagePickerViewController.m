@@ -108,6 +108,7 @@ for(int icon_count=1;icon_count<9;icon_count++){
 -(IBAction) goBack:(id) sender{ 
     [mscrollview setHidden:YES];
     [mainViev setHidden:NO];
+    count=0;
 
 }
 
@@ -167,6 +168,7 @@ for(int icon_count=1;icon_count<9;icon_count++){
 }
 - (void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)orientation duration:(NSTimeInterval)duration {
  mscrollview.frame =mainViev.frame;
+     NSLog(@"blaaljdakljfkj%f  :%f",mscrollview.frame.size.width, self.mainViev.frame.size.width);
   
 
     
@@ -185,7 +187,10 @@ for(int icon_count=1;icon_count<9;icon_count++){
 }
 
 
-
+- (BOOL) shouldAutorotate
+{
+    return NO;
+}
 
 @end
 
