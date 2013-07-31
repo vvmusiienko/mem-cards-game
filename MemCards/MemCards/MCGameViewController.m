@@ -6,13 +6,14 @@
 //  Copyright (c) 2012 Vova Musiienko. All rights reserved.
 //
 
+#import "MCLevelEndViewController.h"
 #import "MCGameViewController.h"
 #import "MCGameField.h"
 #import "MCCard.h"
 
 @implementation MCGameViewController
 
--(void)generateFieldWithCards{
+-(void) generateFieldWithCards {
     
     MCGameField *testField=[[MCGameField alloc] init];
     [testField setwidth:[[currentLevelSettings objectAtIndex:2] intValue] AndHeight:[[currentLevelSettings objectAtIndex:3] intValue]];
@@ -79,9 +80,11 @@
             [lastSelCard performSelector:@selector(hideImage) withObject:nil afterDelay:1];
             lastSelCard=nil;
             currentCard=nil;
+            
             if (imageCount==0) {
-                //go to LevelEndView
-                
+                //go to level end view
+                MCLevelEndViewController *levelEnd = [[MCLevelEndViewController alloc] initWithNibName:nil bundle:nil];
+                [self presentViewController:levelEnd animated:YES completion:nil ];
             }
         }
     }
@@ -118,8 +121,10 @@
 {
     NSString *defaultPath = [[NSBundle mainBundle] pathForResource:@"Levels.plist" ofType:nil];
     plistWithLevels= [NSArray arrayWithContentsOfFile:defaultPath];
-    NSLog(@"%@",plistWithLevels );
-    currentLevelSettings=[plistWithLevels objectAtIndex:6];
+    currentLevelSettings=[plistWithLevels objectAtIndex:0];
+    
+    NSLog(@"%d",([[currentLevelSettings objectAtIndex:2] intValue] * [[currentLevelSettings objectAtIndex:3] intValue]));
+    
     imageCount=0;
     i=0;j=0;
     

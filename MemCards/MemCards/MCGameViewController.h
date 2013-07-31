@@ -17,12 +17,14 @@
     
     NSArray *plistWithLevels;
     NSArray *currentLevelSettings;
+    
     //objects needed for gameLogic---------------------------------------------------
     MCCard *lastSelCard;
     MCCard *currentCard;
     int imageCount;
     //objects needed for gameLogic---------------------------------------------------
     
+
 }
 -(IBAction)mainMenuTapped:(id)sender;
 -(void)showActivity;
